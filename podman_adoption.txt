@@ -1,0 +1,16 @@
+  512  sudo -S chmod +x /home/ubuntu/molo17/DB2-MSS_53e4/gluesync-docker/run-podman.sh <<< "ubuntu"
+  513  sudo -S chown ubuntu:ubuntu /home/ubuntu/molo17/DB2-MSS_53e4/gluesync-docker/podman-compose.yml /home/ubuntu/molo17/DB2-MSS_53e4/gluesync-docker/proxy/traefik-podman.yml /home/ubuntu/molo17/DB2-MSS_53e4/gluesync-docker/run-podman.sh <<< "ubuntu"
+  515  cd /home/ubuntu/molo17/DB2-MSS_53e4/gluesync-docke
+  516  cd /home/ubuntu/molo17/DB2-MSS_53e4/gluesync-docker
+  518  sudo docker-compose down
+  522  cat run-podman.sh 
+  523  ./run-podman.sh 
+  524  sudo apt-get install podman-compose ==> not available!!
+  525  apt-cache search podman-compose 2>/dev/null | head -5
+  526  sudo apt-get update
+  527* sudo apt-get install -y python3-pip
+  528* pip3 install --user podman-compose
+  529* echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+  530* source ~/.bashrc
+  531* podman-compose --version
+  532  history

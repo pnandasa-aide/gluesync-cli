@@ -1,0 +1,6311 @@
+[
+  {
+    "timestamp": "2026-04-08T22:10:34.812623",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines",
+    "path": "/pipelines",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiZDFiMGE3My0zYTJlLTQ4M2ItYWE5MC1hYjUzYzdjOTI3ODEiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTYyNjMwNzc2MCwicGxhbiI6InRyaWFsIn0.QPOVUrMqA590IxXuj4v2aiT5k1X56RNm321E9UCmpOE",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 401,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "notificationId": -1,
+      "message": "Invalid authorization token, please retry or make a new login in order to obtain a fresh token"
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:33:04.048374",
+    "method": "POST",
+    "url": "https://localhost:1717/authentication/login",
+    "path": "/authentication/login",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "42",
+      "Authorization": "Bearer",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Content-Type": "application/json",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "request_body": {
+      "username": "admin",
+      "password": "[REDACTED]"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "apiToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "changeRequired": false
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:33:04.702584",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines",
+    "path": "/pipelines",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": [
+      {
+        "id": "8aeb9fb6",
+        "name": "Test-CLI-Pipeline",
+        "description": "Created via CLI",
+        "sourceAgentsInfo": [],
+        "targetAgentsInfo": [],
+        "configurationCompleted": false,
+        "isInMaintenanceMode": false
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-08T22:33:05.279100",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/config/groups",
+    "path": "/pipelines/8aeb9fb6/config/groups",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": [
+      {
+        "groupId": "_default",
+        "name": "default",
+        "description": "",
+        "color": "#00000000"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-08T22:33:05.509597",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/entities",
+    "path": "/pipelines/8aeb9fb6/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": []
+  },
+  {
+    "timestamp": "2026-04-08T22:33:05.512830",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents",
+    "path": "/pipelines/8aeb9fb6/agents",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": []
+  },
+  {
+    "timestamp": "2026-04-08T22:36:07.335881",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents",
+    "path": "/pipelines/8aeb9fb6/agents",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": []
+  },
+  {
+    "timestamp": "2026-04-08T22:36:17.324557",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/add?agentType=source&agentInternalName=ibm-iseries&agentUserTag=ship-with-control-ibm-iseries",
+    "path": "/pipelines/8aeb9fb6/agents/add?agentType=source&agentInternalName=ibm-iseries&agentUserTag=ship-with-control-ibm-iseries",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "agentId": "dcc35915"
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:36:17.632887",
+    "method": "PUT",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915?agentType=SOURCE",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915?agentType=SOURCE",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "0",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {}
+  },
+  {
+    "timestamp": "2026-04-08T22:36:17.940470",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6",
+    "path": "/pipelines/8aeb9fb6",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "id": "8aeb9fb6",
+      "name": "Test-CLI-Pipeline",
+      "description": "Created via CLI",
+      "sourceAgentsInfo": [
+        {
+          "agentId": "dcc35915",
+          "agentTag": "ibm-iseries"
+        }
+      ],
+      "targetAgentsInfo": [],
+      "configurationCompleted": false,
+      "isInMaintenanceMode": false
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:36:18.161296",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents",
+    "path": "/pipelines/8aeb9fb6/agents",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": [
+      {
+        "agentId": "dcc35915",
+        "agentType": "SOURCE",
+        "agentTag": "ibm-iseries",
+        "hostCredentials": {
+          "connectionName": "",
+          "host": "",
+          "port": 0,
+          "databaseName": "",
+          "disableAuth": false,
+          "enableTls": false,
+          "trustServerCertificate": false,
+          "useUploadedTrustStore": false,
+          "useUploadedKeyStore": false,
+          "useUploadedCertificate": false,
+          "additionalHosts": [],
+          "minConnectionsCount": 5,
+          "maxConnectionsCount": 25
+        },
+        "hostCredentialsCustomProperties": {},
+        "specificConfiguration": {}
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-08T22:36:18.300689",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915/discovery/node-info",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915/discovery/node-info",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "implementedEntityTypes": [
+        "SingleTable",
+        "MultiTable"
+      ],
+      "hostCredentialsFields": [
+        {
+          "key": "host",
+          "displayName": "",
+          "type": "String",
+          "default": "",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "username",
+          "displayName": "",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "password",
+          "displayName": "",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "minConnectionsCount",
+          "displayName": "",
+          "type": "Int",
+          "default": "5",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "maxConnectionsCount",
+          "displayName": "",
+          "type": "Int",
+          "default": "25",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "connectionString",
+          "displayName": "",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "enableTls",
+          "displayName": "",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "trustStorePath",
+          "displayName": "",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "trustStorePassword",
+          "displayName": "",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "keyStorePath",
+          "displayName": "",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "keyStorePassword",
+          "displayName": "",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        }
+      ],
+      "hostCredentialsCustomProperties": [
+        {
+          "key": "useConnectionPool",
+          "displayName": "Use connection pool",
+          "type": "Boolean",
+          "default": "true",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "dateFormat",
+          "displayName": "Date Format",
+          "type": "String",
+          "default": "iso",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "timeFormat",
+          "displayName": "Time Format",
+          "type": "String",
+          "default": "iso",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "blockSize",
+          "displayName": "Block Size (kilobytes)",
+          "type": "String",
+          "default": "512",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "lobThreshold",
+          "displayName": "Lob Threshold",
+          "type": "String",
+          "default": "0",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "gluesyncLibrary",
+          "displayName": "Gluesync library",
+          "type": "String",
+          "default": "GLUESYNC",
+          "associatedAgentType": "Source",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "gluesyncJournalCheckPointTableName",
+          "displayName": "Gluesync journal check point",
+          "type": "String",
+          "default": "JOURNALSCP",
+          "associatedAgentType": "Source",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "enableDDSDiscovery",
+          "displayName": "Enable DDS keys discovery",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "useDatabaseTimezone",
+          "displayName": "Use database timezone",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "errorsFull",
+          "displayName": "Enable full errors on JDBC connection",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "dataTruncation",
+          "displayName": "Enable data truncation warnings",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "dataPrefetch",
+          "displayName": "Enable data prefetch",
+          "type": "Boolean",
+          "default": "true",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "translateBinary",
+          "displayName": "Translate binary",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        }
+      ],
+      "customProperties": [
+        {
+          "key": "sourceChangeRetention",
+          "displayName": "Source change retention in hours",
+          "type": "Int",
+          "default": "24",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "enableRecursionProtection",
+          "displayName": "Enable Recursion Protection",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "maxConcurrency",
+          "displayName": "Max Concurrency (0 means no limitation)",
+          "type": "Int",
+          "default": "0",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "maxSnapshotConcurrency",
+          "displayName": "Max Snapshot Concurrency (0 means no limitation)",
+          "type": "Int",
+          "default": "0",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "trimTextColumns",
+          "displayName": "Trim text values",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "maxDisplayJournalRows",
+          "displayName": "Display journal rows limit",
+          "type": "Int",
+          "default": "10000",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "disableJournalReader",
+          "displayName": "Disable journal reader",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "disableDisplayJournalFilesFilter",
+          "displayName": "Disable display journal files filter",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "disableTruncateOnSnapshot",
+          "displayName": "Disable truncate on target table before snapshot inserts",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Target",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "journalReaderPageSize",
+          "displayName": "Journal reader page size (0 means disabled)",
+          "type": "Int",
+          "default": "1000",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "journalReaderFetchSize",
+          "displayName": "Journal reader fetch size (0 means default)",
+          "type": "Int",
+          "default": "1000",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "legacyModeJournalReader",
+          "displayName": "Legacy mode journal reader (use DSPJRN command)",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        }
+      ],
+      "customEntitiesProperties": [
+        {
+          "key": "maxWriteBulkSize",
+          "displayName": "Max Write Bulk Size",
+          "type": "Int",
+          "default": "250000",
+          "associatedAgentType": "Target",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "preSnapshotCommand",
+          "displayName": "SQL Pre-Snapshot start command",
+          "type": "String",
+          "default": "",
+          "associatedAgentType": "Target",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "postSnapshotCommand",
+          "displayName": "SQL Post-Snapshot stop command",
+          "type": "String",
+          "default": "",
+          "associatedAgentType": "Target",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "useDedicatedJournalReader",
+          "displayName": "Use Dedicated Journal Reader",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Source",
+          "isOptional": true,
+          "options": []
+        }
+      ],
+      "customTablesProperties": [
+        {
+          "key": "whereClause",
+          "displayName": "SQL Snapshot where clause filter (without initial WHERE)",
+          "type": "String",
+          "associatedAgentType": "Source",
+          "isOptional": true,
+          "options": []
+        }
+      ],
+      "dataTypesMatrix": [
+        {
+          "gluesyncDataType": "SHORT",
+          "defaultType": "SMALLINT",
+          "supportedTypes": [
+            "SMALLINT"
+          ]
+        },
+        {
+          "gluesyncDataType": "INT",
+          "defaultType": "INTEGER",
+          "supportedTypes": [
+            "INTEGER"
+          ]
+        },
+        {
+          "gluesyncDataType": "LONG",
+          "defaultType": "BIGINT",
+          "supportedTypes": [
+            "BIGINT"
+          ]
+        },
+        {
+          "gluesyncDataType": "BIG_DECIMAL",
+          "defaultType": "DECIMAL",
+          "supportedTypes": [
+            "NUMERIC",
+            "DECIMAL",
+            "DECFLOAT"
+          ]
+        },
+        {
+          "gluesyncDataType": "DOUBLE",
+          "defaultType": "DOUBLE PRECISION",
+          "supportedTypes": [
+            "DOUBLE PRECISION",
+            "DOUBLE"
+          ]
+        },
+        {
+          "gluesyncDataType": "FLOAT",
+          "defaultType": "REAL",
+          "supportedTypes": [
+            "REAL",
+            "SINGLE PRECISION"
+          ]
+        },
+        {
+          "gluesyncDataType": "STRING",
+          "defaultType": "CHARACTER VARYING",
+          "supportedTypes": [
+            "CHARACTER",
+            "CHARACTER VARYING",
+            "NATIONAL CHARACTER",
+            "NATIONAL CHARACTER VARYING",
+            "GRAPHIC",
+            "XML",
+            "CHARACTER LARGE OBJECT",
+            "NATIONAL CHARACTER LARGE OBJECT"
+          ]
+        },
+        {
+          "gluesyncDataType": "LOCAL_DATE",
+          "defaultType": "DATE",
+          "supportedTypes": [
+            "DATE"
+          ]
+        },
+        {
+          "gluesyncDataType": "LOCAL_TIME",
+          "defaultType": "TIME",
+          "supportedTypes": [
+            "TIME"
+          ]
+        },
+        {
+          "gluesyncDataType": "LOCAL_DATE_TIME",
+          "defaultType": "TIMESTAMP",
+          "supportedTypes": [
+            "TIMESTAMP"
+          ]
+        },
+        {
+          "gluesyncDataType": "BYTE_ARRAY",
+          "defaultType": "BINARY",
+          "supportedTypes": [
+            "BINARY",
+            "BINARY VARYING",
+            "BINARY LARGE OBJECT",
+            "CHARACTER FOR BIT DATA",
+            "CHARACTER VARYING FOR BIT DATA"
+          ]
+        },
+        {
+          "gluesyncDataType": "BOOLEAN",
+          "defaultType": "BOOLEAN",
+          "supportedTypes": [
+            "BOOLEAN"
+          ]
+        }
+      ],
+      "dataTypeCompatibilityMatrix": {
+        "STRING": [
+          "STRING"
+        ],
+        "NUMBER": [
+          "SHORT",
+          "INT",
+          "FLOAT",
+          "DOUBLE",
+          "BIG_DECIMAL",
+          "LONG"
+        ],
+        "BOOLEAN": [
+          "BOOLEAN"
+        ],
+        "DATETIME": [
+          "LOCAL_DATE_TIME",
+          "OFFSET_DATE_TIME"
+        ],
+        "DATE": [
+          "LOCAL_DATE"
+        ],
+        "TIME": [
+          "LOCAL_TIME",
+          "OFFSET_TIME"
+        ],
+        "ARRAY": [
+          "ARRAY",
+          "BYTE_ARRAY"
+        ],
+        "MAP": [
+          "MAP"
+        ]
+      },
+      "maxAliasLength": 2147483647,
+      "allowedBulkMode": "BOTH",
+      "databaseStructureDefinition": [
+        {
+          "key": "schema",
+          "displayName": "Schema",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "table",
+          "displayName": "Table",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:37:48.601661",
+    "method": "PUT",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915/config/credentials",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915/config/credentials",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "425",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Content-Type": "application/json",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "request_body": {
+      "hostCredentials": {
+        "connectionName": "",
+        "host": "161.82.146.249",
+        "port": 0,
+        "databaseName": "",
+        "username": "user001",
+        "password": "[REDACTED]",
+        "disableAuth": false,
+        "enableTls": false,
+        "trustServerCertificate": false,
+        "useUploadedTrustStore": false,
+        "useUploadedKeyStore": false,
+        "useUploadedCertificate": false,
+        "additionalHosts": [
+          {
+            "host": ""
+          }
+        ],
+        "minConnectionsCount": 5,
+        "maxConnectionsCount": 25
+      },
+      "customHostCredentials": {
+        "translateBinary": false
+      }
+    },
+    "status_code": 202,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body_raw": "43726564656e7469616c732073656e7420746f206167656e7473"
+  },
+  {
+    "timestamp": "2026-04-08T22:37:49.916991",
+    "method": "PUT",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915/config/specific",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915/config/specific",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "20",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Content-Type": "application/json",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "request_body": {
+      "configuration": {}
+    },
+    "status_code": 202,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body_raw": "537065636966696320636f6e66696775726174696f6e2073656e7420746f206167656e7473"
+  },
+  {
+    "timestamp": "2026-04-08T22:37:50.139928",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents",
+    "path": "/pipelines/8aeb9fb6/agents",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": [
+      {
+        "agentId": "dcc35915",
+        "agentType": "SOURCE",
+        "agentTag": "ibm-iseries",
+        "hostCredentials": {
+          "connectionName": "",
+          "host": "161.82.146.249",
+          "port": 0,
+          "databaseName": "",
+          "username": "user001",
+          "password": "<hidden>",
+          "disableAuth": false,
+          "enableTls": false,
+          "trustServerCertificate": false,
+          "useUploadedTrustStore": false,
+          "useUploadedKeyStore": false,
+          "useUploadedCertificate": false,
+          "additionalHosts": [],
+          "minConnectionsCount": 5,
+          "maxConnectionsCount": 25
+        },
+        "hostCredentialsCustomProperties": {
+          "translateBinary": false
+        },
+        "specificConfiguration": {}
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-08T22:38:07.037817",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/add?agentType=target&agentInternalName=mssql-cdc&agentUserTag=merge-with-confidence-mssql-cdc",
+    "path": "/pipelines/8aeb9fb6/agents/add?agentType=target&agentInternalName=mssql-cdc&agentUserTag=merge-with-confidence-mssql-cdc",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "agentId": "be2d59bd"
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:38:07.276655",
+    "method": "PUT",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd?agentType=TARGET",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd?agentType=TARGET",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "0",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {}
+  },
+  {
+    "timestamp": "2026-04-08T22:38:07.433054",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6",
+    "path": "/pipelines/8aeb9fb6",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "id": "8aeb9fb6",
+      "name": "Test-CLI-Pipeline",
+      "description": "Created via CLI",
+      "sourceAgentsInfo": [
+        {
+          "agentId": "dcc35915",
+          "agentTag": "ibm-iseries"
+        }
+      ],
+      "targetAgentsInfo": [
+        {
+          "agentId": "be2d59bd",
+          "agentTag": "mssql-cdc"
+        }
+      ],
+      "configurationCompleted": false,
+      "isInMaintenanceMode": false
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:38:07.681800",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents",
+    "path": "/pipelines/8aeb9fb6/agents",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": [
+      {
+        "agentId": "dcc35915",
+        "agentType": "SOURCE",
+        "agentTag": "ibm-iseries",
+        "hostCredentials": {
+          "connectionName": "",
+          "host": "161.82.146.249",
+          "port": 0,
+          "databaseName": "",
+          "username": "user001",
+          "password": "<hidden>",
+          "disableAuth": false,
+          "enableTls": false,
+          "trustServerCertificate": false,
+          "useUploadedTrustStore": false,
+          "useUploadedKeyStore": false,
+          "useUploadedCertificate": false,
+          "additionalHosts": [],
+          "minConnectionsCount": 5,
+          "maxConnectionsCount": 25
+        },
+        "hostCredentialsCustomProperties": {
+          "translateBinary": false
+        },
+        "specificConfiguration": {}
+      },
+      {
+        "agentId": "be2d59bd",
+        "agentType": "TARGET",
+        "agentTag": "mssql-cdc",
+        "hostCredentials": {
+          "connectionName": "",
+          "host": "",
+          "port": 0,
+          "databaseName": "",
+          "disableAuth": false,
+          "enableTls": false,
+          "trustServerCertificate": false,
+          "useUploadedTrustStore": false,
+          "useUploadedKeyStore": false,
+          "useUploadedCertificate": false,
+          "additionalHosts": [],
+          "minConnectionsCount": 5,
+          "maxConnectionsCount": 25
+        },
+        "hostCredentialsCustomProperties": {},
+        "specificConfiguration": {}
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-08T22:38:07.976178",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd/discovery/node-info",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd/discovery/node-info",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "implementedEntityTypes": [
+        "SingleTable",
+        "MultiTable"
+      ],
+      "hostCredentialsFields": [
+        {
+          "key": "host",
+          "displayName": "",
+          "type": "String",
+          "default": "",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "port",
+          "displayName": "Port (leave 0 to use dynamic port discovery)",
+          "type": "Int",
+          "default": "0",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "username",
+          "displayName": "",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "password",
+          "displayName": "",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "databaseName",
+          "displayName": "",
+          "type": "String",
+          "default": "",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "minConnectionsCount",
+          "displayName": "",
+          "type": "Int",
+          "default": "5",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "maxConnectionsCount",
+          "displayName": "",
+          "type": "Int",
+          "default": "25",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "connectionString",
+          "displayName": "",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "enableTls",
+          "displayName": "",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "trustServerCertificate",
+          "displayName": "",
+          "type": "Boolean",
+          "default": "true",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        }
+      ],
+      "hostCredentialsCustomProperties": [
+        {
+          "key": "useConnectionPool",
+          "displayName": "Use connection pool",
+          "type": "Boolean",
+          "default": "true",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "sendTimeAsDatetime",
+          "displayName": "Send Time As Datetime",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "disableDatabaseCompression",
+          "displayName": "Disable DB compression",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "gluesyncSchemaName",
+          "displayName": "Gluesync schema name (necessary for bulk operations)",
+          "type": "String",
+          "default": "GLUESYNC",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "disableAutomaticSchemaCreation",
+          "displayName": "Disable automatic schema creation",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": true,
+          "options": []
+        }
+      ],
+      "customProperties": [
+        {
+          "key": "sourceChangeRetention",
+          "displayName": "Source change retention in hours",
+          "type": "Int",
+          "default": "72",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "enableRecursionProtection",
+          "displayName": "Enable Recursion Protection",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "statePreservationTableNamePrefix",
+          "displayName": "State Preservation Table Name Prefix",
+          "type": "String",
+          "default": "",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "maxConcurrency",
+          "displayName": "Max Concurrency (0 means no limitation)",
+          "type": "Int",
+          "default": "0",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "maxSnapshotConcurrency",
+          "displayName": "Max Snapshot Concurrency (0 means no limitation)",
+          "type": "Int",
+          "default": "0",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "trimTextColumns",
+          "displayName": "Trim text values",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "disableTruncateOnSnapshot",
+          "displayName": "Disable truncate on target table before snapshot inserts",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Target",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "disableAutomaticDatabaseCDCActivation",
+          "displayName": "Disable automatic database change data capture activation",
+          "type": "Boolean",
+          "default": "false",
+          "associatedAgentType": "Source",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "gluesyncSchema",
+          "displayName": "Default Gluesync schema",
+          "type": "String",
+          "default": "false",
+          "associatedAgentType": "Source",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "setFireTriggersOnBulkCopy",
+          "displayName": "Set fire triggers on bulk copy",
+          "type": "Boolean",
+          "default": "true",
+          "associatedAgentType": "Target",
+          "isOptional": false,
+          "options": []
+        }
+      ],
+      "customEntitiesProperties": [
+        {
+          "key": "maxWriteBatchSize",
+          "displayName": "Max Write Batch Size",
+          "type": "Int",
+          "default": "1000",
+          "associatedAgentType": "Target",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "maxDeleteBatchSize",
+          "displayName": "Max Delete Batch Size",
+          "type": "Int",
+          "default": "1000",
+          "associatedAgentType": "Target",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "maxWriteBulkSize",
+          "displayName": "Max Write Bulk Size",
+          "type": "Int",
+          "default": "250000",
+          "associatedAgentType": "Target",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "preSnapshotCommand",
+          "displayName": "SQL Pre-Snapshot start command",
+          "type": "String",
+          "default": "",
+          "associatedAgentType": "Target",
+          "isOptional": true,
+          "options": []
+        },
+        {
+          "key": "postSnapshotCommand",
+          "displayName": "SQL Post-Snapshot stop command",
+          "type": "String",
+          "default": "",
+          "associatedAgentType": "Target",
+          "isOptional": true,
+          "options": []
+        }
+      ],
+      "customTablesProperties": [
+        {
+          "key": "whereClause",
+          "displayName": "SQL Snapshot where clause filter (without initial WHERE)",
+          "type": "String",
+          "associatedAgentType": "Source",
+          "isOptional": true,
+          "options": []
+        }
+      ],
+      "dataTypesMatrix": [
+        {
+          "gluesyncDataType": "STRING",
+          "defaultType": "varchar",
+          "supportedTypes": [
+            "char",
+            "varchar",
+            "text",
+            "nchar",
+            "nvarchar",
+            "ntext",
+            "json",
+            "geography",
+            "geometry",
+            "xml",
+            "uniqueidentifier"
+          ]
+        },
+        {
+          "gluesyncDataType": "SHORT",
+          "defaultType": "smallint",
+          "supportedTypes": [
+            "smallint"
+          ]
+        },
+        {
+          "gluesyncDataType": "INT",
+          "defaultType": "int",
+          "supportedTypes": [
+            "tinyint",
+            "int"
+          ]
+        },
+        {
+          "gluesyncDataType": "LONG",
+          "defaultType": "bigint",
+          "supportedTypes": [
+            "bigint"
+          ]
+        },
+        {
+          "gluesyncDataType": "FLOAT",
+          "defaultType": "real",
+          "supportedTypes": [
+            "real"
+          ]
+        },
+        {
+          "gluesyncDataType": "DOUBLE",
+          "defaultType": "float",
+          "supportedTypes": [
+            "float"
+          ]
+        },
+        {
+          "gluesyncDataType": "BIG_DECIMAL",
+          "defaultType": "decimal",
+          "supportedTypes": [
+            "decimal",
+            "numeric",
+            "money",
+            "smallmoney"
+          ]
+        },
+        {
+          "gluesyncDataType": "BOOLEAN",
+          "defaultType": "bit",
+          "supportedTypes": [
+            "bit"
+          ]
+        },
+        {
+          "gluesyncDataType": "LOCAL_DATE",
+          "defaultType": "date",
+          "supportedTypes": [
+            "date"
+          ]
+        },
+        {
+          "gluesyncDataType": "LOCAL_TIME",
+          "defaultType": "time",
+          "supportedTypes": [
+            "time"
+          ]
+        },
+        {
+          "gluesyncDataType": "LOCAL_DATE_TIME",
+          "defaultType": "datetime",
+          "supportedTypes": [
+            "smalldatetime",
+            "datetime2",
+            "datetime"
+          ]
+        },
+        {
+          "gluesyncDataType": "OFFSET_DATE_TIME",
+          "defaultType": "datetimeoffset",
+          "supportedTypes": [
+            "datetimeoffset"
+          ]
+        },
+        {
+          "gluesyncDataType": "BYTE_ARRAY",
+          "defaultType": "binary",
+          "supportedTypes": [
+            "binary",
+            "varbinary",
+            "image",
+            "timestamp"
+          ]
+        },
+        {
+          "gluesyncDataType": "MAP",
+          "defaultType": "varchar",
+          "supportedTypes": [
+            "char",
+            "varchar",
+            "text",
+            "nchar",
+            "nvarchar",
+            "ntext",
+            "json"
+          ]
+        },
+        {
+          "gluesyncDataType": "ARRAY",
+          "defaultType": "varchar",
+          "supportedTypes": [
+            "char",
+            "varchar",
+            "text",
+            "nchar",
+            "nvarchar",
+            "ntext",
+            "json"
+          ]
+        }
+      ],
+      "dataTypeCompatibilityMatrix": {
+        "STRING": [
+          "STRING"
+        ],
+        "NUMBER": [
+          "SHORT",
+          "INT",
+          "FLOAT",
+          "DOUBLE",
+          "BIG_DECIMAL",
+          "LONG"
+        ],
+        "BOOLEAN": [
+          "BOOLEAN"
+        ],
+        "DATETIME": [
+          "LOCAL_DATE_TIME",
+          "OFFSET_DATE_TIME"
+        ],
+        "DATE": [
+          "LOCAL_DATE"
+        ],
+        "TIME": [
+          "LOCAL_TIME",
+          "OFFSET_TIME"
+        ],
+        "ARRAY": [
+          "ARRAY",
+          "BYTE_ARRAY"
+        ],
+        "MAP": [
+          "MAP"
+        ]
+      },
+      "maxAliasLength": 2147483647,
+      "allowedBulkMode": "BOTH",
+      "databaseStructureDefinition": [
+        {
+          "key": "schema",
+          "displayName": "Schema",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        },
+        {
+          "key": "table",
+          "displayName": "Table",
+          "type": "String",
+          "associatedAgentType": "Both",
+          "isOptional": false,
+          "options": []
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:39:54.350853",
+    "method": "PUT",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd/config/credentials",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd/config/credentials",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "416",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Content-Type": "application/json",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "request_body": {
+      "hostCredentials": {
+        "connectionName": "",
+        "host": "192.168.13.62",
+        "port": 0,
+        "databaseName": "GSTargetDB",
+        "username": "gstgdblogin",
+        "password": "[REDACTED]",
+        "disableAuth": false,
+        "enableTls": false,
+        "trustServerCertificate": true,
+        "useUploadedTrustStore": false,
+        "useUploadedKeyStore": false,
+        "useUploadedCertificate": false,
+        "additionalHosts": [
+          {
+            "host": ""
+          }
+        ],
+        "minConnectionsCount": 5,
+        "maxConnectionsCount": 25
+      },
+      "customHostCredentials": {}
+    },
+    "status_code": 202,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body_raw": "43726564656e7469616c732073656e7420746f206167656e7473"
+  },
+  {
+    "timestamp": "2026-04-08T22:39:55.314997",
+    "method": "PUT",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd/config/specific",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd/config/specific",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "20",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Content-Type": "application/json",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "request_body": {
+      "configuration": {}
+    },
+    "status_code": 202,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body_raw": "537065636966696320636f6e66696775726174696f6e2073656e7420746f206167656e7473"
+  },
+  {
+    "timestamp": "2026-04-08T22:39:55.629226",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents",
+    "path": "/pipelines/8aeb9fb6/agents",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": [
+      {
+        "agentId": "dcc35915",
+        "agentType": "SOURCE",
+        "agentTag": "ibm-iseries",
+        "hostCredentials": {
+          "connectionName": "",
+          "host": "161.82.146.249",
+          "port": 0,
+          "databaseName": "",
+          "username": "user001",
+          "password": "<hidden>",
+          "disableAuth": false,
+          "enableTls": false,
+          "trustServerCertificate": false,
+          "useUploadedTrustStore": false,
+          "useUploadedKeyStore": false,
+          "useUploadedCertificate": false,
+          "additionalHosts": [],
+          "minConnectionsCount": 5,
+          "maxConnectionsCount": 25
+        },
+        "hostCredentialsCustomProperties": {
+          "translateBinary": false
+        },
+        "specificConfiguration": {}
+      },
+      {
+        "agentId": "be2d59bd",
+        "agentType": "TARGET",
+        "agentTag": "mssql-cdc",
+        "hostCredentials": {
+          "connectionName": "",
+          "host": "192.168.13.62",
+          "port": 0,
+          "databaseName": "GSTargetDB",
+          "username": "gstgdblogin",
+          "password": "<hidden>",
+          "disableAuth": false,
+          "enableTls": false,
+          "trustServerCertificate": true,
+          "useUploadedTrustStore": false,
+          "useUploadedKeyStore": false,
+          "useUploadedCertificate": false,
+          "additionalHosts": [],
+          "minConnectionsCount": 5,
+          "maxConnectionsCount": 25
+        },
+        "hostCredentialsCustomProperties": {},
+        "specificConfiguration": {}
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-08T22:39:57.982320",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/entities",
+    "path": "/pipelines/8aeb9fb6/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": []
+  },
+  {
+    "timestamp": "2026-04-08T22:39:58.336842",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/entities",
+    "path": "/pipelines/8aeb9fb6/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": []
+  },
+  {
+    "timestamp": "2026-04-08T22:39:58.642347",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd/discovery/schemas",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd/discovery/schemas",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "schemas": [
+        {
+          "schema": "dbo"
+        },
+        {
+          "schema": "guest"
+        },
+        {
+          "schema": "INFORMATION_SCHEMA"
+        },
+        {
+          "schema": "sys"
+        },
+        {
+          "schema": "db_owner"
+        },
+        {
+          "schema": "db_accessadmin"
+        },
+        {
+          "schema": "db_securityadmin"
+        },
+        {
+          "schema": "db_ddladmin"
+        },
+        {
+          "schema": "db_backupoperator"
+        },
+        {
+          "schema": "db_datareader"
+        },
+        {
+          "schema": "db_datawriter"
+        },
+        {
+          "schema": "db_denydatareader"
+        },
+        {
+          "schema": "db_denydatawriter"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:39:58.781699",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915/discovery/schemas",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915/discovery/schemas",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "schemas": [
+        {
+          "schema": "#CGULIB"
+        },
+        {
+          "schema": "#DFULIB"
+        },
+        {
+          "schema": "#DSULIB"
+        },
+        {
+          "schema": "#LIBRARY"
+        },
+        {
+          "schema": "#SDALIB"
+        },
+        {
+          "schema": "#SEULIB"
+        },
+        {
+          "schema": "AAAJRNLIB"
+        },
+        {
+          "schema": "ACCOUNTING"
+        },
+        {
+          "schema": "AEONDVL"
+        },
+        {
+          "schema": "APIAPPLIB"
+        },
+        {
+          "schema": "APIAPPLIB2"
+        },
+        {
+          "schema": "ART"
+        },
+        {
+          "schema": "BMGTEST"
+        },
+        {
+          "schema": "CDCINST"
+        },
+        {
+          "schema": "DBEZPIPE"
+        },
+        {
+          "schema": "DBMCLONE"
+        },
+        {
+          "schema": "DBMOTOLIB"
+        },
+        {
+          "schema": "DBSDRTST"
+        },
+        {
+          "schema": "DMIRROR"
+        },
+        {
+          "schema": "DMSTORE"
+        },
+        {
+          "schema": "DTUTOR"
+        },
+        {
+          "schema": "DVDDTA"
+        },
+        {
+          "schema": "EZPIPE"
+        },
+        {
+          "schema": "EZTEST"
+        },
+        {
+          "schema": "FLGHT"
+        },
+        {
+          "schema": "FLGHT400"
+        },
+        {
+          "schema": "GLUELIB"
+        },
+        {
+          "schema": "GLUELIB2"
+        },
+        {
+          "schema": "GLUESYNC"
+        },
+        {
+          "schema": "GLUESYN2LB"
+        },
+        {
+          "schema": "GSDB2ORCL"
+        },
+        {
+          "schema": "GSLIBTST"
+        },
+        {
+          "schema": "GSLIBTV2"
+        },
+        {
+          "schema": "GSTESTLIB"
+        },
+        {
+          "schema": "ICLUSTER"
+        },
+        {
+          "schema": "INDEXING"
+        },
+        {
+          "schema": "INSURELIB"
+        },
+        {
+          "schema": "JRNRCVGSL"
+        },
+        {
+          "schema": "LAKEVIEW"
+        },
+        {
+          "schema": "MEDIATOR"
+        },
+        {
+          "schema": "MIMIXQGPL"
+        },
+        {
+          "schema": "MYLIB"
+        },
+        {
+          "schema": "NOOKJRN"
+        },
+        {
+          "schema": "NOOKRCV"
+        },
+        {
+          "schema": "NOTELIB"
+        },
+        {
+          "schema": "NULLID"
+        },
+        {
+          "schema": "OMNIENT"
+        },
+        {
+          "schema": "PAKORNNAN2"
+        },
+        {
+          "schema": "PERFTEST"
+        },
+        {
+          "schema": "POCAWS"
+        },
+        {
+          "schema": "POCAWSMB"
+        },
+        {
+          "schema": "POCLIB"
+        },
+        {
+          "schema": "QADVSEC"
+        },
+        {
+          "schema": "QAFPLIB1"
+        },
+        {
+          "schema": "QAFPLIB2"
+        },
+        {
+          "schema": "QAFPLIB3"
+        },
+        {
+          "schema": "QCA400W"
+        },
+        {
+          "schema": "QCBLLE"
+        },
+        {
+          "schema": "QCBLLEP"
+        },
+        {
+          "schema": "QCCA"
+        },
+        {
+          "schema": "QCLUSTER"
+        },
+        {
+          "schema": "QCPPLE"
+        },
+        {
+          "schema": "QCTX"
+        },
+        {
+          "schema": "QDEVTOOLS"
+        },
+        {
+          "schema": "QDIRSRV2"
+        },
+        {
+          "schema": "QDNS"
+        },
+        {
+          "schema": "QDOC"
+        },
+        {
+          "schema": "QDSNX"
+        },
+        {
+          "schema": "QEASP"
+        },
+        {
+          "schema": "QEBU"
+        },
+        {
+          "schema": "QFNTB45"
+        },
+        {
+          "schema": "QFNTCPL"
+        },
+        {
+          "schema": "QFNTWT"
+        },
+        {
+          "schema": "QFNT18"
+        },
+        {
+          "schema": "QGDDM"
+        },
+        {
+          "schema": "QGPL"
+        },
+        {
+          "schema": "QGPLTEMP"
+        },
+        {
+          "schema": "QGY"
+        },
+        {
+          "schema": "QHASM"
+        },
+        {
+          "schema": "QHLPSYS"
+        },
+        {
+          "schema": "QHTTP"
+        },
+        {
+          "schema": "QHTTPSVR"
+        },
+        {
+          "schema": "QICSS"
+        },
+        {
+          "schema": "QICU"
+        },
+        {
+          "schema": "QINMEDIA"
+        },
+        {
+          "schema": "QINPRIOR"
+        },
+        {
+          "schema": "QINSYS"
+        },
+        {
+          "schema": "QIWA2"
+        },
+        {
+          "schema": "QIWS"
+        },
+        {
+          "schema": "QJAVA"
+        },
+        {
+          "schema": "QJRNL"
+        },
+        {
+          "schema": "QJVM8032"
+        },
+        {
+          "schema": "QJVM8064"
+        },
+        {
+          "schema": "QLBL"
+        },
+        {
+          "schema": "QLWIRADM"
+        },
+        {
+          "schema": "QMGTC"
+        },
+        {
+          "schema": "QMGTC2"
+        },
+        {
+          "schema": "QMGTOOLS"
+        },
+        {
+          "schema": "QMRDB"
+        },
+        {
+          "schema": "QMSE"
+        },
+        {
+          "schema": "QNAE"
+        },
+        {
+          "schema": "QNAVACS"
+        },
+        {
+          "schema": "QNAVSRV"
+        },
+        {
+          "schema": "QNEWNAVSRV"
+        },
+        {
+          "schema": "QOAR"
+        },
+        {
+          "schema": "QPASE"
+        },
+        {
+          "schema": "QPDA"
+        },
+        {
+          "schema": "QPFRDATA"
+        },
+        {
+          "schema": "QPTFOBJ1"
+        },
+        {
+          "schema": "QPTFOBJ2"
+        },
+        {
+          "schema": "QQALIB"
+        },
+        {
+          "schema": "QQFTEMP"
+        },
+        {
+          "schema": "QQRYLIB"
+        },
+        {
+          "schema": "QRCL"
+        },
+        {
+          "schema": "QRECOVERY"
+        },
+        {
+          "schema": "QRJE"
+        },
+        {
+          "schema": "QRPG"
+        },
+        {
+          "schema": "QRPGLE"
+        },
+        {
+          "schema": "QRPGLEP"
+        },
+        {
+          "schema": "QRPLOBJ"
+        },
+        {
+          "schema": "QSBMJOBTRK"
+        },
+        {
+          "schema": "QSERVICE"
+        },
+        {
+          "schema": "QSHELL"
+        },
+        {
+          "schema": "QSOC"
+        },
+        {
+          "schema": "QSPL"
+        },
+        {
+          "schema": "QSQL"
+        },
+        {
+          "schema": "QSR"
+        },
+        {
+          "schema": "QSRV"
+        },
+        {
+          "schema": "QSRVAGT"
+        },
+        {
+          "schema": "QSSP"
+        },
+        {
+          "schema": "QSYS"
+        },
+        {
+          "schema": "QSYSCGI"
+        },
+        {
+          "schema": "QSYSDIR"
+        },
+        {
+          "schema": "QSYSINC"
+        },
+        {
+          "schema": "QSYSLOCALE"
+        },
+        {
+          "schema": "QSYSNLS"
+        },
+        {
+          "schema": "QSYSV7R2M0"
+        },
+        {
+          "schema": "QSYSV7R3M0"
+        },
+        {
+          "schema": "QSYS2"
+        },
+        {
+          "schema": "QSYS2930"
+        },
+        {
+          "schema": "QSYS38"
+        },
+        {
+          "schema": "QS36F"
+        },
+        {
+          "schema": "QTCP"
+        },
+        {
+          "schema": "QTEMP"
+        },
+        {
+          "schema": "QTIVCIT"
+        },
+        {
+          "schema": "QUME"
+        },
+        {
+          "schema": "QUSRDIRCF"
+        },
+        {
+          "schema": "QUSRDIRDB"
+        },
+        {
+          "schema": "QUSRHASM"
+        },
+        {
+          "schema": "QUSRSYS"
+        },
+        {
+          "schema": "QUSRTEMP"
+        },
+        {
+          "schema": "QUSRTOOL"
+        },
+        {
+          "schema": "QUTL"
+        },
+        {
+          "schema": "QWEBQRY"
+        },
+        {
+          "schema": "QWEBQRYX"
+        },
+        {
+          "schema": "QWQCENT"
+        },
+        {
+          "schema": "QWQREPOS"
+        },
+        {
+          "schema": "QWQRETAIL"
+        },
+        {
+          "schema": "QXMLSERV"
+        },
+        {
+          "schema": "REPL_FULL_TEST"
+        },
+        {
+          "schema": "SALESTAX"
+        },
+        {
+          "schema": "SYNITI"
+        },
+        {
+          "schema": "SYSIBM"
+        },
+        {
+          "schema": "SYSIBMADM"
+        },
+        {
+          "schema": "SYSPROC"
+        },
+        {
+          "schema": "SYSTOOLS"
+        },
+        {
+          "schema": "TBLIBJRN"
+        },
+        {
+          "schema": "TBLIBTST"
+        },
+        {
+          "schema": "TEST"
+        },
+        {
+          "schema": "TESTDVDDTA"
+        },
+        {
+          "schema": "TESTLIB97"
+        },
+        {
+          "schema": "TESTLIB98"
+        },
+        {
+          "schema": "TESTLIB99"
+        },
+        {
+          "schema": "TESTSDR01"
+        },
+        {
+          "schema": "THTC16286"
+        },
+        {
+          "schema": "VSI001LIB"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:40:07.180338",
+    "method": "PUT",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/config/entities",
+    "path": "/pipelines/8aeb9fb6/config/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "15",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Content-Type": "application/json",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "request_body": {
+      "entities": []
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body_raw": "456e74697479207570736572742073756363657373"
+  },
+  {
+    "timestamp": "2026-04-08T22:40:07.474328",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/entities",
+    "path": "/pipelines/8aeb9fb6/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": []
+  },
+  {
+    "timestamp": "2026-04-08T22:40:07.824024",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/entities",
+    "path": "/pipelines/8aeb9fb6/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": []
+  },
+  {
+    "timestamp": "2026-04-08T22:40:10.631832",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/entities",
+    "path": "/pipelines/8aeb9fb6/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": []
+  },
+  {
+    "timestamp": "2026-04-08T22:40:13.331550",
+    "method": "PUT",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6",
+    "path": "/pipelines/8aeb9fb6",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "60",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Content-Type": "application/json",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "request_body": {
+      "name": "Test-CLI-Pipeline",
+      "description": "Created via CLI"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "pipelineId": "8aeb9fb6"
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:40:13.629426",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6",
+    "path": "/pipelines/8aeb9fb6",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "id": "8aeb9fb6",
+      "name": "Test-CLI-Pipeline",
+      "description": "Created via CLI",
+      "sourceAgentsInfo": [
+        {
+          "agentId": "dcc35915",
+          "agentTag": "ibm-iseries"
+        }
+      ],
+      "targetAgentsInfo": [
+        {
+          "agentId": "be2d59bd",
+          "agentTag": "mssql-cdc"
+        }
+      ],
+      "configurationCompleted": true,
+      "isInMaintenanceMode": false
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:40:14.373362",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/entities",
+    "path": "/pipelines/8aeb9fb6/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": []
+  },
+  {
+    "timestamp": "2026-04-08T22:40:22.516989",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/entities",
+    "path": "/pipelines/8aeb9fb6/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": []
+  },
+  {
+    "timestamp": "2026-04-08T22:40:22.843985",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd/discovery/schemas",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd/discovery/schemas",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "schemas": [
+        {
+          "schema": "dbo"
+        },
+        {
+          "schema": "guest"
+        },
+        {
+          "schema": "INFORMATION_SCHEMA"
+        },
+        {
+          "schema": "sys"
+        },
+        {
+          "schema": "db_owner"
+        },
+        {
+          "schema": "db_accessadmin"
+        },
+        {
+          "schema": "db_securityadmin"
+        },
+        {
+          "schema": "db_ddladmin"
+        },
+        {
+          "schema": "db_backupoperator"
+        },
+        {
+          "schema": "db_datareader"
+        },
+        {
+          "schema": "db_datawriter"
+        },
+        {
+          "schema": "db_denydatareader"
+        },
+        {
+          "schema": "db_denydatawriter"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:40:22.996964",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915/discovery/schemas",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915/discovery/schemas",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "schemas": [
+        {
+          "schema": "#CGULIB"
+        },
+        {
+          "schema": "#DFULIB"
+        },
+        {
+          "schema": "#DSULIB"
+        },
+        {
+          "schema": "#LIBRARY"
+        },
+        {
+          "schema": "#SDALIB"
+        },
+        {
+          "schema": "#SEULIB"
+        },
+        {
+          "schema": "AAAJRNLIB"
+        },
+        {
+          "schema": "ACCOUNTING"
+        },
+        {
+          "schema": "AEONDVL"
+        },
+        {
+          "schema": "APIAPPLIB"
+        },
+        {
+          "schema": "APIAPPLIB2"
+        },
+        {
+          "schema": "ART"
+        },
+        {
+          "schema": "BMGTEST"
+        },
+        {
+          "schema": "CDCINST"
+        },
+        {
+          "schema": "DBEZPIPE"
+        },
+        {
+          "schema": "DBMCLONE"
+        },
+        {
+          "schema": "DBMOTOLIB"
+        },
+        {
+          "schema": "DBSDRTST"
+        },
+        {
+          "schema": "DMIRROR"
+        },
+        {
+          "schema": "DMSTORE"
+        },
+        {
+          "schema": "DTUTOR"
+        },
+        {
+          "schema": "DVDDTA"
+        },
+        {
+          "schema": "EZPIPE"
+        },
+        {
+          "schema": "EZTEST"
+        },
+        {
+          "schema": "FLGHT"
+        },
+        {
+          "schema": "FLGHT400"
+        },
+        {
+          "schema": "GLUELIB"
+        },
+        {
+          "schema": "GLUELIB2"
+        },
+        {
+          "schema": "GLUESYNC"
+        },
+        {
+          "schema": "GLUESYN2LB"
+        },
+        {
+          "schema": "GSDB2ORCL"
+        },
+        {
+          "schema": "GSLIBTST"
+        },
+        {
+          "schema": "GSLIBTV2"
+        },
+        {
+          "schema": "GSTESTLIB"
+        },
+        {
+          "schema": "ICLUSTER"
+        },
+        {
+          "schema": "INDEXING"
+        },
+        {
+          "schema": "INSURELIB"
+        },
+        {
+          "schema": "JRNRCVGSL"
+        },
+        {
+          "schema": "LAKEVIEW"
+        },
+        {
+          "schema": "MEDIATOR"
+        },
+        {
+          "schema": "MIMIXQGPL"
+        },
+        {
+          "schema": "MYLIB"
+        },
+        {
+          "schema": "NOOKJRN"
+        },
+        {
+          "schema": "NOOKRCV"
+        },
+        {
+          "schema": "NOTELIB"
+        },
+        {
+          "schema": "NULLID"
+        },
+        {
+          "schema": "OMNIENT"
+        },
+        {
+          "schema": "PAKORNNAN2"
+        },
+        {
+          "schema": "PERFTEST"
+        },
+        {
+          "schema": "POCAWS"
+        },
+        {
+          "schema": "POCAWSMB"
+        },
+        {
+          "schema": "POCLIB"
+        },
+        {
+          "schema": "QADVSEC"
+        },
+        {
+          "schema": "QAFPLIB1"
+        },
+        {
+          "schema": "QAFPLIB2"
+        },
+        {
+          "schema": "QAFPLIB3"
+        },
+        {
+          "schema": "QCA400W"
+        },
+        {
+          "schema": "QCBLLE"
+        },
+        {
+          "schema": "QCBLLEP"
+        },
+        {
+          "schema": "QCCA"
+        },
+        {
+          "schema": "QCLUSTER"
+        },
+        {
+          "schema": "QCPPLE"
+        },
+        {
+          "schema": "QCTX"
+        },
+        {
+          "schema": "QDEVTOOLS"
+        },
+        {
+          "schema": "QDIRSRV2"
+        },
+        {
+          "schema": "QDNS"
+        },
+        {
+          "schema": "QDOC"
+        },
+        {
+          "schema": "QDSNX"
+        },
+        {
+          "schema": "QEASP"
+        },
+        {
+          "schema": "QEBU"
+        },
+        {
+          "schema": "QFNTB45"
+        },
+        {
+          "schema": "QFNTCPL"
+        },
+        {
+          "schema": "QFNTWT"
+        },
+        {
+          "schema": "QFNT18"
+        },
+        {
+          "schema": "QGDDM"
+        },
+        {
+          "schema": "QGPL"
+        },
+        {
+          "schema": "QGPLTEMP"
+        },
+        {
+          "schema": "QGY"
+        },
+        {
+          "schema": "QHASM"
+        },
+        {
+          "schema": "QHLPSYS"
+        },
+        {
+          "schema": "QHTTP"
+        },
+        {
+          "schema": "QHTTPSVR"
+        },
+        {
+          "schema": "QICSS"
+        },
+        {
+          "schema": "QICU"
+        },
+        {
+          "schema": "QINMEDIA"
+        },
+        {
+          "schema": "QINPRIOR"
+        },
+        {
+          "schema": "QINSYS"
+        },
+        {
+          "schema": "QIWA2"
+        },
+        {
+          "schema": "QIWS"
+        },
+        {
+          "schema": "QJAVA"
+        },
+        {
+          "schema": "QJRNL"
+        },
+        {
+          "schema": "QJVM8032"
+        },
+        {
+          "schema": "QJVM8064"
+        },
+        {
+          "schema": "QLBL"
+        },
+        {
+          "schema": "QLWIRADM"
+        },
+        {
+          "schema": "QMGTC"
+        },
+        {
+          "schema": "QMGTC2"
+        },
+        {
+          "schema": "QMGTOOLS"
+        },
+        {
+          "schema": "QMRDB"
+        },
+        {
+          "schema": "QMSE"
+        },
+        {
+          "schema": "QNAE"
+        },
+        {
+          "schema": "QNAVACS"
+        },
+        {
+          "schema": "QNAVSRV"
+        },
+        {
+          "schema": "QNEWNAVSRV"
+        },
+        {
+          "schema": "QOAR"
+        },
+        {
+          "schema": "QPASE"
+        },
+        {
+          "schema": "QPDA"
+        },
+        {
+          "schema": "QPFRDATA"
+        },
+        {
+          "schema": "QPTFOBJ1"
+        },
+        {
+          "schema": "QPTFOBJ2"
+        },
+        {
+          "schema": "QQALIB"
+        },
+        {
+          "schema": "QQFTEMP"
+        },
+        {
+          "schema": "QQRYLIB"
+        },
+        {
+          "schema": "QRCL"
+        },
+        {
+          "schema": "QRECOVERY"
+        },
+        {
+          "schema": "QRJE"
+        },
+        {
+          "schema": "QRPG"
+        },
+        {
+          "schema": "QRPGLE"
+        },
+        {
+          "schema": "QRPGLEP"
+        },
+        {
+          "schema": "QRPLOBJ"
+        },
+        {
+          "schema": "QSBMJOBTRK"
+        },
+        {
+          "schema": "QSERVICE"
+        },
+        {
+          "schema": "QSHELL"
+        },
+        {
+          "schema": "QSOC"
+        },
+        {
+          "schema": "QSPL"
+        },
+        {
+          "schema": "QSQL"
+        },
+        {
+          "schema": "QSR"
+        },
+        {
+          "schema": "QSRV"
+        },
+        {
+          "schema": "QSRVAGT"
+        },
+        {
+          "schema": "QSSP"
+        },
+        {
+          "schema": "QSYS"
+        },
+        {
+          "schema": "QSYSCGI"
+        },
+        {
+          "schema": "QSYSDIR"
+        },
+        {
+          "schema": "QSYSINC"
+        },
+        {
+          "schema": "QSYSLOCALE"
+        },
+        {
+          "schema": "QSYSNLS"
+        },
+        {
+          "schema": "QSYSV7R2M0"
+        },
+        {
+          "schema": "QSYSV7R3M0"
+        },
+        {
+          "schema": "QSYS2"
+        },
+        {
+          "schema": "QSYS2930"
+        },
+        {
+          "schema": "QSYS38"
+        },
+        {
+          "schema": "QS36F"
+        },
+        {
+          "schema": "QTCP"
+        },
+        {
+          "schema": "QTEMP"
+        },
+        {
+          "schema": "QTIVCIT"
+        },
+        {
+          "schema": "QUME"
+        },
+        {
+          "schema": "QUSRDIRCF"
+        },
+        {
+          "schema": "QUSRDIRDB"
+        },
+        {
+          "schema": "QUSRHASM"
+        },
+        {
+          "schema": "QUSRSYS"
+        },
+        {
+          "schema": "QUSRTEMP"
+        },
+        {
+          "schema": "QUSRTOOL"
+        },
+        {
+          "schema": "QUTL"
+        },
+        {
+          "schema": "QWEBQRY"
+        },
+        {
+          "schema": "QWEBQRYX"
+        },
+        {
+          "schema": "QWQCENT"
+        },
+        {
+          "schema": "QWQREPOS"
+        },
+        {
+          "schema": "QWQRETAIL"
+        },
+        {
+          "schema": "QXMLSERV"
+        },
+        {
+          "schema": "REPL_FULL_TEST"
+        },
+        {
+          "schema": "SALESTAX"
+        },
+        {
+          "schema": "SYNITI"
+        },
+        {
+          "schema": "SYSIBM"
+        },
+        {
+          "schema": "SYSIBMADM"
+        },
+        {
+          "schema": "SYSPROC"
+        },
+        {
+          "schema": "SYSTOOLS"
+        },
+        {
+          "schema": "TBLIBJRN"
+        },
+        {
+          "schema": "TBLIBTST"
+        },
+        {
+          "schema": "TEST"
+        },
+        {
+          "schema": "TESTDVDDTA"
+        },
+        {
+          "schema": "TESTLIB97"
+        },
+        {
+          "schema": "TESTLIB98"
+        },
+        {
+          "schema": "TESTLIB99"
+        },
+        {
+          "schema": "TESTSDR01"
+        },
+        {
+          "schema": "THTC16286"
+        },
+        {
+          "schema": "VSI001LIB"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:40:37.728802",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915/discovery/tables?schema=GSLIBTST",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915/discovery/tables?schema=GSLIBTST",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "tables": [
+        {
+          "id": 7294526022553180223,
+          "schema": "GSLIBTST",
+          "name": "A3_BIN"
+        },
+        {
+          "id": 338274808622996172,
+          "schema": "GSLIBTST",
+          "name": "A3_BIN_V"
+        },
+        {
+          "id": 7930685177810852543,
+          "schema": "GSLIBTST",
+          "name": "A3_DT"
+        },
+        {
+          "id": 7924472720711003314,
+          "schema": "GSLIBTST",
+          "name": "CUST_LARGE"
+        },
+        {
+          "id": -585104772549232018,
+          "schema": "GSLIBTST",
+          "name": "CUST_MULTIKEY"
+        },
+        {
+          "id": 198938656360200055,
+          "schema": "GSLIBTST",
+          "name": "CUST_NOPK"
+        },
+        {
+          "id": -7840468056302474202,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERS"
+        },
+        {
+          "id": -4342613911401219784,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERS_LOAD"
+        },
+        {
+          "id": 6401878630957453620,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERS_NONKEY"
+        },
+        {
+          "id": 7832685817834355134,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERS_NOPK"
+        },
+        {
+          "id": -2584460013204809594,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERS2"
+        },
+        {
+          "id": 1630224684177739854,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERZ"
+        },
+        {
+          "id": -67160207066318865,
+          "schema": "GSLIBTST",
+          "name": "DSPFDOUT"
+        },
+        {
+          "id": -8334690602515083910,
+          "schema": "GSLIBTST",
+          "name": "DT_TIME_SRC"
+        },
+        {
+          "id": -8015485704835496531,
+          "schema": "GSLIBTST",
+          "name": "MISMATCH_SRC"
+        },
+        {
+          "id": -2015760838181695483,
+          "schema": "GSLIBTST",
+          "name": "ORDERS"
+        },
+        {
+          "id": -100917666550780371,
+          "schema": "GSLIBTST",
+          "name": "ORDERS_MULTIKEY"
+        },
+        {
+          "id": -5547319075360464318,
+          "schema": "GSLIBTST",
+          "name": "ORDERTRANX"
+        },
+        {
+          "id": 4785666693399777649,
+          "schema": "GSLIBTST",
+          "name": "PRODUCTS"
+        },
+        {
+          "id": -4112021126579037310,
+          "schema": "GSLIBTST",
+          "name": "STRUC_SRC"
+        },
+        {
+          "id": 509159749518036185,
+          "schema": "GSLIBTST",
+          "name": "SUBSCRIBER"
+        },
+        {
+          "id": -5507666170450015569,
+          "schema": "GSLIBTST",
+          "name": "TBL_LARGE_SRC"
+        },
+        {
+          "id": -8000431567060096199,
+          "schema": "GSLIBTST",
+          "name": "V_TBL_LARGE_SRC"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:40:41.414663",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915/discovery/columns?tableschema=GSLIBTST&tablename=CUSTOMERS",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915/discovery/columns?tableschema=GSLIBTST&tablename=CUSTOMERS",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "columns": [
+        {
+          "id": 1704915659655896885,
+          "name": "_RRN",
+          "type": "BIGINT",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "ordinalPosition": 0
+        },
+        {
+          "id": -4891398803227897090,
+          "name": "CUST_ID",
+          "type": "INTEGER",
+          "isPrimaryKey": true,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 1,
+          "numericPrecision": 9,
+          "numericScale": 0
+        },
+        {
+          "id": 3280626576278720473,
+          "name": "FIRST_NAME",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 2
+        },
+        {
+          "id": 7696657422409895801,
+          "name": "LAST_NAME",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 3
+        },
+        {
+          "id": 8275657831543607410,
+          "name": "EMAIL",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 100,
+          "ordinalPosition": 4
+        },
+        {
+          "id": 2613799984570680051,
+          "name": "PHONE",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 20,
+          "ordinalPosition": 5
+        },
+        {
+          "id": -9209239526357045690,
+          "name": "CREATED_AT",
+          "type": "TIMESTAMP",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 6,
+          "datetimePrecision": 6
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:40:47.728061",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd/discovery/tables?schema=dbo",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd/discovery/tables?schema=dbo",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "tables": [
+        {
+          "id": -8185772470176473608,
+          "schema": "dbo",
+          "name": "subscribers"
+        },
+        {
+          "id": -3660819238360898562,
+          "schema": "dbo",
+          "name": "ordertranx"
+        },
+        {
+          "id": 3971609716785522057,
+          "schema": "dbo",
+          "name": "CUSTOMERS"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:40:55.554345",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd/discovery/columns?tableschema=dbo&tablename=CUSTOMERS",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd/discovery/columns?tableschema=dbo&tablename=CUSTOMERS",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "columns": [
+        {
+          "id": -4891398803227897090,
+          "name": "CUST_ID",
+          "type": "int",
+          "isPrimaryKey": true,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 1,
+          "numericPrecision": 10,
+          "numericScale": 0
+        },
+        {
+          "id": 3280626576278720473,
+          "name": "FIRST_NAME",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 2
+        },
+        {
+          "id": 7696657422409895801,
+          "name": "LAST_NAME",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 3
+        },
+        {
+          "id": 8275657831543607410,
+          "name": "EMAIL",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 100,
+          "ordinalPosition": 4
+        },
+        {
+          "id": 2613799984570680051,
+          "name": "PHONE",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 20,
+          "ordinalPosition": 5
+        },
+        {
+          "id": -9209239526357045690,
+          "name": "CREATED_AT",
+          "type": "datetime",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 6,
+          "datetimePrecision": 3
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:41:11.415372",
+    "method": "PUT",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/config/entities",
+    "path": "/pipelines/8aeb9fb6/config/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "3182",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Content-Type": "application/json",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "request_body": {
+      "entities": [
+        {
+          "entityId": "",
+          "entityName": "GSLIBTST.CUSTOMERS",
+          "agentEntities": [
+            {
+              "type": "SingleTable",
+              "entityId": "",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "",
+              "entityType": {
+                "type": "Source",
+                "maxFetchItemsCountPerIteration": 1000,
+                "maxTransactionMessageKbSize": 1024,
+                "pollingIntervalMilliseconds": 500,
+                "unchangedDataFilterType": "ENTIRE_ROW"
+              },
+              "agentId": "dcc35915",
+              "orderIndex": 0,
+              "customProperties": {
+                "useDedicatedJournalReader": false
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": -7840468056302474202,
+                "schema": "GSLIBTST",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "TIMESTAMP"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                }
+              ]
+            },
+            {
+              "type": "SingleTable",
+              "entityId": "",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "",
+              "entityType": {
+                "type": "Target",
+                "allowedOperations": [
+                  "INSERT",
+                  "UPDATE",
+                  "DELETE",
+                  "TRUNCATE"
+                ],
+                "snapshotWritingConcurrency": 2,
+                "columnsMappingMatrix": [
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -4891398803227897090,
+                    "targetColumnId": -4891398803227897090
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 3280626576278720473,
+                    "targetColumnId": 3280626576278720473
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 7696657422409895801,
+                    "targetColumnId": 7696657422409895801
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 8275657831543607410,
+                    "targetColumnId": 8275657831543607410
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 2613799984570680051,
+                    "targetColumnId": 2613799984570680051
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -9209239526357045690,
+                    "targetColumnId": -9209239526357045690
+                  }
+                ],
+                "tablesWithUnlockedSchema": [],
+                "tablesWithUnlockedDataTypes": [],
+                "useBulkOperationsDuringCDC": false,
+                "useBulkOperationsWhileSnapshot": false
+              },
+              "agentId": "be2d59bd",
+              "orderIndex": 0,
+              "customProperties": {
+                "maxWriteBatchSize": 1000,
+                "maxDeleteBatchSize": 1000,
+                "maxWriteBulkSize": 250000,
+                "preSnapshotCommand": "",
+                "postSnapshotCommand": ""
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": 3971609716785522057,
+                "schema": "dbo",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "varchar"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "varchar"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "datetime"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                }
+              ]
+            }
+          ],
+          "groupId": "_default",
+          "orderIndex": 0
+        }
+      ]
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body_raw": "456e74697479207570736572742073756363657373"
+  },
+  {
+    "timestamp": "2026-04-08T22:41:12.045017",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/entities",
+    "path": "/pipelines/8aeb9fb6/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": [
+      {
+        "entity": {
+          "entityId": "98fd97b8",
+          "entityName": "GSLIBTST.CUSTOMERS",
+          "agentEntities": [
+            {
+              "type": "SingleTable",
+              "entityId": "98fd97b8",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "b76f26ed",
+              "entityType": {
+                "type": "Source",
+                "maxFetchItemsCountPerIteration": 1000,
+                "maxTransactionMessageKbSize": 1024,
+                "pollingIntervalMilliseconds": 500,
+                "unchangedDataFilterType": "ENTIRE_ROW"
+              },
+              "agentId": "dcc35915",
+              "orderIndex": 0,
+              "customProperties": {
+                "useDedicatedJournalReader": false
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": -7840468056302474202,
+                "schema": "GSLIBTST",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "TIMESTAMP"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                }
+              ]
+            },
+            {
+              "type": "SingleTable",
+              "entityId": "98fd97b8",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "53abc8da",
+              "entityType": {
+                "type": "Target",
+                "allowedOperations": [
+                  "INSERT",
+                  "UPDATE",
+                  "DELETE",
+                  "TRUNCATE"
+                ],
+                "snapshotWritingConcurrency": 2,
+                "columnsMappingMatrix": [
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -4891398803227897090,
+                    "targetColumnId": -4891398803227897090
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 3280626576278720473,
+                    "targetColumnId": 3280626576278720473
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 7696657422409895801,
+                    "targetColumnId": 7696657422409895801
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 8275657831543607410,
+                    "targetColumnId": 8275657831543607410
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 2613799984570680051,
+                    "targetColumnId": 2613799984570680051
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -9209239526357045690,
+                    "targetColumnId": -9209239526357045690
+                  }
+                ],
+                "tablesWithUnlockedSchema": [],
+                "tablesWithUnlockedDataTypes": [],
+                "useBulkOperationsDuringCDC": false,
+                "useBulkOperationsWhileSnapshot": false
+              },
+              "agentId": "be2d59bd",
+              "orderIndex": 0,
+              "customProperties": {
+                "maxWriteBatchSize": 1000,
+                "maxDeleteBatchSize": 1000,
+                "maxWriteBulkSize": 250000,
+                "preSnapshotCommand": "",
+                "postSnapshotCommand": ""
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": 3971609716785522057,
+                "schema": "dbo",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "varchar"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "varchar"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "datetime"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                }
+              ]
+            }
+          ],
+          "groupId": "_default",
+          "orderIndex": 0
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-08T22:46:38.155909",
+    "method": "PUT",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/config/entities",
+    "path": "/pipelines/8aeb9fb6/config/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "3260",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Content-Type": "application/json",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "request_body": {
+      "entities": [
+        {
+          "entityId": "98fd97b8",
+          "entityName": "GSLIBTST.CUSTOMERS",
+          "agentEntities": [
+            {
+              "type": "SingleTable",
+              "entityId": "98fd97b8",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "b76f26ed",
+              "entityType": {
+                "type": "Source",
+                "maxFetchItemsCountPerIteration": 1000,
+                "maxTransactionMessageKbSize": 1024,
+                "pollingIntervalMilliseconds": 500,
+                "unchangedDataFilterType": "ENTIRE_ROW"
+              },
+              "agentId": "dcc35915",
+              "orderIndex": 0,
+              "customProperties": {
+                "useDedicatedJournalReader": false
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": -7840468056302474202,
+                "schema": "GSLIBTST",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "TIMESTAMP"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                }
+              ]
+            },
+            {
+              "type": "SingleTable",
+              "entityId": "98fd97b8",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "53abc8da",
+              "entityType": {
+                "type": "Target",
+                "allowedOperations": [
+                  "INSERT",
+                  "UPDATE",
+                  "DELETE",
+                  "TRUNCATE"
+                ],
+                "snapshotWritingConcurrency": 2,
+                "snapshotDeleteFilter": {
+                  "clauses": []
+                },
+                "columnsMappingMatrix": [
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -4891398803227897090,
+                    "targetColumnId": -4891398803227897090
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 3280626576278720473,
+                    "targetColumnId": 3280626576278720473
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 7696657422409895801,
+                    "targetColumnId": 7696657422409895801
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 8275657831543607410,
+                    "targetColumnId": 8275657831543607410
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 2613799984570680051,
+                    "targetColumnId": 2613799984570680051
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -9209239526357045690,
+                    "targetColumnId": -9209239526357045690
+                  }
+                ],
+                "tablesWithUnlockedSchema": [],
+                "tablesWithUnlockedDataTypes": [],
+                "useBulkOperationsDuringCDC": false,
+                "useBulkOperationsWhileSnapshot": false
+              },
+              "agentId": "be2d59bd",
+              "orderIndex": 0,
+              "customProperties": {
+                "maxWriteBatchSize": 1000,
+                "maxDeleteBatchSize": 1000,
+                "maxWriteBulkSize": 250000,
+                "preSnapshotCommand": "",
+                "postSnapshotCommand": ""
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": 3971609716785522057,
+                "schema": "dbo",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "varchar"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "varchar"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "datetime"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                }
+              ]
+            }
+          ],
+          "groupId": "_default",
+          "orderIndex": 0
+        }
+      ]
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body_raw": "456e74697479207570736572742073756363657373"
+  },
+  {
+    "timestamp": "2026-04-08T22:46:38.515580",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/entities",
+    "path": "/pipelines/8aeb9fb6/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": [
+      {
+        "entity": {
+          "entityId": "98fd97b8",
+          "entityName": "GSLIBTST.CUSTOMERS",
+          "agentEntities": [
+            {
+              "type": "SingleTable",
+              "entityId": "98fd97b8",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "b76f26ed",
+              "entityType": {
+                "type": "Source",
+                "maxFetchItemsCountPerIteration": 1000,
+                "maxTransactionMessageKbSize": 1024,
+                "pollingIntervalMilliseconds": 500,
+                "unchangedDataFilterType": "ENTIRE_ROW"
+              },
+              "agentId": "dcc35915",
+              "orderIndex": 0,
+              "customProperties": {
+                "useDedicatedJournalReader": false
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": -7840468056302474202,
+                "schema": "GSLIBTST",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "TIMESTAMP"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                }
+              ]
+            },
+            {
+              "type": "SingleTable",
+              "entityId": "98fd97b8",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "53abc8da",
+              "entityType": {
+                "type": "Target",
+                "allowedOperations": [
+                  "INSERT",
+                  "UPDATE",
+                  "DELETE",
+                  "TRUNCATE"
+                ],
+                "snapshotWritingConcurrency": 2,
+                "snapshotDeleteFilter": {
+                  "clauses": []
+                },
+                "columnsMappingMatrix": [
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -4891398803227897090,
+                    "targetColumnId": -4891398803227897090
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 3280626576278720473,
+                    "targetColumnId": 3280626576278720473
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 7696657422409895801,
+                    "targetColumnId": 7696657422409895801
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 8275657831543607410,
+                    "targetColumnId": 8275657831543607410
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 2613799984570680051,
+                    "targetColumnId": 2613799984570680051
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -9209239526357045690,
+                    "targetColumnId": -9209239526357045690
+                  }
+                ],
+                "tablesWithUnlockedSchema": [],
+                "tablesWithUnlockedDataTypes": [],
+                "useBulkOperationsDuringCDC": false,
+                "useBulkOperationsWhileSnapshot": false
+              },
+              "agentId": "be2d59bd",
+              "orderIndex": 0,
+              "customProperties": {
+                "maxWriteBatchSize": 1000,
+                "maxDeleteBatchSize": 1000,
+                "maxWriteBulkSize": 250000,
+                "preSnapshotCommand": "",
+                "postSnapshotCommand": ""
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": 3971609716785522057,
+                "schema": "dbo",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "varchar"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "varchar"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "datetime"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                }
+              ]
+            }
+          ],
+          "groupId": "_default",
+          "orderIndex": 0
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-08T22:46:47.018105",
+    "method": "POST",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/commands/sync/one-time-snapshot?entity=98fd97b8&snapshotWriteMethod=INSERT",
+    "path": "/pipelines/8aeb9fb6/commands/sync/one-time-snapshot?entity=98fd97b8&snapshotWriteMethod=INSERT",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "0",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 202,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body_raw": "4f6e652074696d6520736e617073686f7420636f6d6d616e6420726563656976656420616e64206469737061746368656420746f206167656e7473"
+  },
+  {
+    "timestamp": "2026-04-08T22:47:22.454897",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd/discovery/schemas",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd/discovery/schemas",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "schemas": [
+        {
+          "schema": "dbo"
+        },
+        {
+          "schema": "guest"
+        },
+        {
+          "schema": "INFORMATION_SCHEMA"
+        },
+        {
+          "schema": "sys"
+        },
+        {
+          "schema": "db_owner"
+        },
+        {
+          "schema": "db_accessadmin"
+        },
+        {
+          "schema": "db_securityadmin"
+        },
+        {
+          "schema": "db_ddladmin"
+        },
+        {
+          "schema": "db_backupoperator"
+        },
+        {
+          "schema": "db_datareader"
+        },
+        {
+          "schema": "db_datawriter"
+        },
+        {
+          "schema": "db_denydatareader"
+        },
+        {
+          "schema": "db_denydatawriter"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:47:22.610394",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915/discovery/schemas",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915/discovery/schemas",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "schemas": [
+        {
+          "schema": "#CGULIB"
+        },
+        {
+          "schema": "#DFULIB"
+        },
+        {
+          "schema": "#DSULIB"
+        },
+        {
+          "schema": "#LIBRARY"
+        },
+        {
+          "schema": "#SDALIB"
+        },
+        {
+          "schema": "#SEULIB"
+        },
+        {
+          "schema": "AAAJRNLIB"
+        },
+        {
+          "schema": "ACCOUNTING"
+        },
+        {
+          "schema": "AEONDVL"
+        },
+        {
+          "schema": "APIAPPLIB"
+        },
+        {
+          "schema": "APIAPPLIB2"
+        },
+        {
+          "schema": "ART"
+        },
+        {
+          "schema": "BMGTEST"
+        },
+        {
+          "schema": "CDCINST"
+        },
+        {
+          "schema": "DBEZPIPE"
+        },
+        {
+          "schema": "DBMCLONE"
+        },
+        {
+          "schema": "DBMOTOLIB"
+        },
+        {
+          "schema": "DBSDRTST"
+        },
+        {
+          "schema": "DMIRROR"
+        },
+        {
+          "schema": "DMSTORE"
+        },
+        {
+          "schema": "DTUTOR"
+        },
+        {
+          "schema": "DVDDTA"
+        },
+        {
+          "schema": "EZPIPE"
+        },
+        {
+          "schema": "EZTEST"
+        },
+        {
+          "schema": "FLGHT"
+        },
+        {
+          "schema": "FLGHT400"
+        },
+        {
+          "schema": "GLUELIB"
+        },
+        {
+          "schema": "GLUELIB2"
+        },
+        {
+          "schema": "GLUESYNC"
+        },
+        {
+          "schema": "GLUESYN2LB"
+        },
+        {
+          "schema": "GSDB2ORCL"
+        },
+        {
+          "schema": "GSLIBTST"
+        },
+        {
+          "schema": "GSLIBTV2"
+        },
+        {
+          "schema": "GSTESTLIB"
+        },
+        {
+          "schema": "ICLUSTER"
+        },
+        {
+          "schema": "INDEXING"
+        },
+        {
+          "schema": "INSURELIB"
+        },
+        {
+          "schema": "JRNRCVGSL"
+        },
+        {
+          "schema": "LAKEVIEW"
+        },
+        {
+          "schema": "MEDIATOR"
+        },
+        {
+          "schema": "MIMIXQGPL"
+        },
+        {
+          "schema": "MYLIB"
+        },
+        {
+          "schema": "NOOKJRN"
+        },
+        {
+          "schema": "NOOKRCV"
+        },
+        {
+          "schema": "NOTELIB"
+        },
+        {
+          "schema": "NULLID"
+        },
+        {
+          "schema": "OMNIENT"
+        },
+        {
+          "schema": "PAKORNNAN2"
+        },
+        {
+          "schema": "PERFTEST"
+        },
+        {
+          "schema": "POCAWS"
+        },
+        {
+          "schema": "POCAWSMB"
+        },
+        {
+          "schema": "POCLIB"
+        },
+        {
+          "schema": "QADVSEC"
+        },
+        {
+          "schema": "QAFPLIB1"
+        },
+        {
+          "schema": "QAFPLIB2"
+        },
+        {
+          "schema": "QAFPLIB3"
+        },
+        {
+          "schema": "QCA400W"
+        },
+        {
+          "schema": "QCBLLE"
+        },
+        {
+          "schema": "QCBLLEP"
+        },
+        {
+          "schema": "QCCA"
+        },
+        {
+          "schema": "QCLUSTER"
+        },
+        {
+          "schema": "QCPPLE"
+        },
+        {
+          "schema": "QCTX"
+        },
+        {
+          "schema": "QDEVTOOLS"
+        },
+        {
+          "schema": "QDIRSRV2"
+        },
+        {
+          "schema": "QDNS"
+        },
+        {
+          "schema": "QDOC"
+        },
+        {
+          "schema": "QDSNX"
+        },
+        {
+          "schema": "QEASP"
+        },
+        {
+          "schema": "QEBU"
+        },
+        {
+          "schema": "QFNTB45"
+        },
+        {
+          "schema": "QFNTCPL"
+        },
+        {
+          "schema": "QFNTWT"
+        },
+        {
+          "schema": "QFNT18"
+        },
+        {
+          "schema": "QGDDM"
+        },
+        {
+          "schema": "QGPL"
+        },
+        {
+          "schema": "QGPLTEMP"
+        },
+        {
+          "schema": "QGY"
+        },
+        {
+          "schema": "QHASM"
+        },
+        {
+          "schema": "QHLPSYS"
+        },
+        {
+          "schema": "QHTTP"
+        },
+        {
+          "schema": "QHTTPSVR"
+        },
+        {
+          "schema": "QICSS"
+        },
+        {
+          "schema": "QICU"
+        },
+        {
+          "schema": "QINMEDIA"
+        },
+        {
+          "schema": "QINPRIOR"
+        },
+        {
+          "schema": "QINSYS"
+        },
+        {
+          "schema": "QIWA2"
+        },
+        {
+          "schema": "QIWS"
+        },
+        {
+          "schema": "QJAVA"
+        },
+        {
+          "schema": "QJRNL"
+        },
+        {
+          "schema": "QJVM8032"
+        },
+        {
+          "schema": "QJVM8064"
+        },
+        {
+          "schema": "QLBL"
+        },
+        {
+          "schema": "QLWIRADM"
+        },
+        {
+          "schema": "QMGTC"
+        },
+        {
+          "schema": "QMGTC2"
+        },
+        {
+          "schema": "QMGTOOLS"
+        },
+        {
+          "schema": "QMRDB"
+        },
+        {
+          "schema": "QMSE"
+        },
+        {
+          "schema": "QNAE"
+        },
+        {
+          "schema": "QNAVACS"
+        },
+        {
+          "schema": "QNAVSRV"
+        },
+        {
+          "schema": "QNEWNAVSRV"
+        },
+        {
+          "schema": "QOAR"
+        },
+        {
+          "schema": "QPASE"
+        },
+        {
+          "schema": "QPDA"
+        },
+        {
+          "schema": "QPFRDATA"
+        },
+        {
+          "schema": "QPTFOBJ1"
+        },
+        {
+          "schema": "QPTFOBJ2"
+        },
+        {
+          "schema": "QQALIB"
+        },
+        {
+          "schema": "QQFTEMP"
+        },
+        {
+          "schema": "QQRYLIB"
+        },
+        {
+          "schema": "QRCL"
+        },
+        {
+          "schema": "QRECOVERY"
+        },
+        {
+          "schema": "QRJE"
+        },
+        {
+          "schema": "QRPG"
+        },
+        {
+          "schema": "QRPGLE"
+        },
+        {
+          "schema": "QRPGLEP"
+        },
+        {
+          "schema": "QRPLOBJ"
+        },
+        {
+          "schema": "QSBMJOBTRK"
+        },
+        {
+          "schema": "QSERVICE"
+        },
+        {
+          "schema": "QSHELL"
+        },
+        {
+          "schema": "QSOC"
+        },
+        {
+          "schema": "QSPL"
+        },
+        {
+          "schema": "QSQL"
+        },
+        {
+          "schema": "QSR"
+        },
+        {
+          "schema": "QSRV"
+        },
+        {
+          "schema": "QSRVAGT"
+        },
+        {
+          "schema": "QSSP"
+        },
+        {
+          "schema": "QSYS"
+        },
+        {
+          "schema": "QSYSCGI"
+        },
+        {
+          "schema": "QSYSDIR"
+        },
+        {
+          "schema": "QSYSINC"
+        },
+        {
+          "schema": "QSYSLOCALE"
+        },
+        {
+          "schema": "QSYSNLS"
+        },
+        {
+          "schema": "QSYSV7R2M0"
+        },
+        {
+          "schema": "QSYSV7R3M0"
+        },
+        {
+          "schema": "QSYS2"
+        },
+        {
+          "schema": "QSYS2930"
+        },
+        {
+          "schema": "QSYS38"
+        },
+        {
+          "schema": "QS36F"
+        },
+        {
+          "schema": "QTCP"
+        },
+        {
+          "schema": "QTEMP"
+        },
+        {
+          "schema": "QTIVCIT"
+        },
+        {
+          "schema": "QUME"
+        },
+        {
+          "schema": "QUSRDIRCF"
+        },
+        {
+          "schema": "QUSRDIRDB"
+        },
+        {
+          "schema": "QUSRHASM"
+        },
+        {
+          "schema": "QUSRSYS"
+        },
+        {
+          "schema": "QUSRTEMP"
+        },
+        {
+          "schema": "QUSRTOOL"
+        },
+        {
+          "schema": "QUTL"
+        },
+        {
+          "schema": "QWEBQRY"
+        },
+        {
+          "schema": "QWEBQRYX"
+        },
+        {
+          "schema": "QWQCENT"
+        },
+        {
+          "schema": "QWQREPOS"
+        },
+        {
+          "schema": "QWQRETAIL"
+        },
+        {
+          "schema": "QXMLSERV"
+        },
+        {
+          "schema": "REPL_FULL_TEST"
+        },
+        {
+          "schema": "SALESTAX"
+        },
+        {
+          "schema": "SYNITI"
+        },
+        {
+          "schema": "SYSIBM"
+        },
+        {
+          "schema": "SYSIBMADM"
+        },
+        {
+          "schema": "SYSPROC"
+        },
+        {
+          "schema": "SYSTOOLS"
+        },
+        {
+          "schema": "TBLIBJRN"
+        },
+        {
+          "schema": "TBLIBTST"
+        },
+        {
+          "schema": "TEST"
+        },
+        {
+          "schema": "TESTDVDDTA"
+        },
+        {
+          "schema": "TESTLIB97"
+        },
+        {
+          "schema": "TESTLIB98"
+        },
+        {
+          "schema": "TESTLIB99"
+        },
+        {
+          "schema": "TESTSDR01"
+        },
+        {
+          "schema": "THTC16286"
+        },
+        {
+          "schema": "VSI001LIB"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:47:22.813030",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915/discovery/tables?schema=GSLIBTST",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915/discovery/tables?schema=GSLIBTST",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "tables": [
+        {
+          "id": 7294526022553180223,
+          "schema": "GSLIBTST",
+          "name": "A3_BIN"
+        },
+        {
+          "id": 338274808622996172,
+          "schema": "GSLIBTST",
+          "name": "A3_BIN_V"
+        },
+        {
+          "id": 7930685177810852543,
+          "schema": "GSLIBTST",
+          "name": "A3_DT"
+        },
+        {
+          "id": 7924472720711003314,
+          "schema": "GSLIBTST",
+          "name": "CUST_LARGE"
+        },
+        {
+          "id": -585104772549232018,
+          "schema": "GSLIBTST",
+          "name": "CUST_MULTIKEY"
+        },
+        {
+          "id": 198938656360200055,
+          "schema": "GSLIBTST",
+          "name": "CUST_NOPK"
+        },
+        {
+          "id": -7840468056302474202,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERS"
+        },
+        {
+          "id": -4342613911401219784,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERS_LOAD"
+        },
+        {
+          "id": 6401878630957453620,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERS_NONKEY"
+        },
+        {
+          "id": 7832685817834355134,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERS_NOPK"
+        },
+        {
+          "id": -2584460013204809594,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERS2"
+        },
+        {
+          "id": 1630224684177739854,
+          "schema": "GSLIBTST",
+          "name": "CUSTOMERZ"
+        },
+        {
+          "id": -67160207066318865,
+          "schema": "GSLIBTST",
+          "name": "DSPFDOUT"
+        },
+        {
+          "id": -8334690602515083910,
+          "schema": "GSLIBTST",
+          "name": "DT_TIME_SRC"
+        },
+        {
+          "id": -8015485704835496531,
+          "schema": "GSLIBTST",
+          "name": "MISMATCH_SRC"
+        },
+        {
+          "id": -2015760838181695483,
+          "schema": "GSLIBTST",
+          "name": "ORDERS"
+        },
+        {
+          "id": -100917666550780371,
+          "schema": "GSLIBTST",
+          "name": "ORDERS_MULTIKEY"
+        },
+        {
+          "id": -5547319075360464318,
+          "schema": "GSLIBTST",
+          "name": "ORDERTRANX"
+        },
+        {
+          "id": 4785666693399777649,
+          "schema": "GSLIBTST",
+          "name": "PRODUCTS"
+        },
+        {
+          "id": -4112021126579037310,
+          "schema": "GSLIBTST",
+          "name": "STRUC_SRC"
+        },
+        {
+          "id": 509159749518036185,
+          "schema": "GSLIBTST",
+          "name": "SUBSCRIBER"
+        },
+        {
+          "id": -5507666170450015569,
+          "schema": "GSLIBTST",
+          "name": "TBL_LARGE_SRC"
+        },
+        {
+          "id": -8000431567060096199,
+          "schema": "GSLIBTST",
+          "name": "V_TBL_LARGE_SRC"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:47:23.001917",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915/discovery/columns?tableschema=GSLIBTST&tablename=CUSTOMERS",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915/discovery/columns?tableschema=GSLIBTST&tablename=CUSTOMERS",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "columns": [
+        {
+          "id": 1704915659655896885,
+          "name": "_RRN",
+          "type": "BIGINT",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "ordinalPosition": 0
+        },
+        {
+          "id": -4891398803227897090,
+          "name": "CUST_ID",
+          "type": "INTEGER",
+          "isPrimaryKey": true,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 1,
+          "numericPrecision": 9,
+          "numericScale": 0
+        },
+        {
+          "id": 3280626576278720473,
+          "name": "FIRST_NAME",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 2
+        },
+        {
+          "id": 7696657422409895801,
+          "name": "LAST_NAME",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 3
+        },
+        {
+          "id": 8275657831543607410,
+          "name": "EMAIL",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 100,
+          "ordinalPosition": 4
+        },
+        {
+          "id": 2613799984570680051,
+          "name": "PHONE",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 20,
+          "ordinalPosition": 5
+        },
+        {
+          "id": -9209239526357045690,
+          "name": "CREATED_AT",
+          "type": "TIMESTAMP",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 6,
+          "datetimePrecision": 6
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:47:23.114643",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd/discovery/columns?tableschema=dbo&tablename=CUSTOMERS",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd/discovery/columns?tableschema=dbo&tablename=CUSTOMERS",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "columns": [
+        {
+          "id": -4891398803227897090,
+          "name": "CUST_ID",
+          "type": "int",
+          "isPrimaryKey": true,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 1,
+          "numericPrecision": 10,
+          "numericScale": 0
+        },
+        {
+          "id": 3280626576278720473,
+          "name": "FIRST_NAME",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 2
+        },
+        {
+          "id": 7696657422409895801,
+          "name": "LAST_NAME",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 3
+        },
+        {
+          "id": 8275657831543607410,
+          "name": "EMAIL",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 100,
+          "ordinalPosition": 4
+        },
+        {
+          "id": 2613799984570680051,
+          "name": "PHONE",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 20,
+          "ordinalPosition": 5
+        },
+        {
+          "id": -9209239526357045690,
+          "name": "CREATED_AT",
+          "type": "datetime",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 6,
+          "datetimePrecision": 3
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:47:23.229741",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd/discovery/tables?schema=dbo",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd/discovery/tables?schema=dbo",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "tables": [
+        {
+          "id": -8185772470176473608,
+          "schema": "dbo",
+          "name": "subscribers"
+        },
+        {
+          "id": -3660819238360898562,
+          "schema": "dbo",
+          "name": "ordertranx"
+        },
+        {
+          "id": 3971609716785522057,
+          "schema": "dbo",
+          "name": "CUSTOMERS"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:47:27.517514",
+    "method": "PUT",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/config/entities",
+    "path": "/pipelines/8aeb9fb6/config/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "3222",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Content-Type": "application/json",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "request_body": {
+      "entities": [
+        {
+          "entityId": "98fd97b8",
+          "entityName": "GSLIBTST.CUSTOMERS",
+          "agentEntities": [
+            {
+              "type": "SingleTable",
+              "entityId": "98fd97b8",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "b76f26ed",
+              "entityType": {
+                "type": "Source",
+                "maxFetchItemsCountPerIteration": 1000,
+                "maxTransactionMessageKbSize": 1024,
+                "pollingIntervalMilliseconds": 500,
+                "unchangedDataFilterType": "ENTIRE_ROW"
+              },
+              "agentId": "dcc35915",
+              "orderIndex": 0,
+              "customProperties": {
+                "useDedicatedJournalReader": false
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": -7840468056302474202,
+                "schema": "GSLIBTST",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "TIMESTAMP"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                }
+              ]
+            },
+            {
+              "type": "SingleTable",
+              "entityId": "98fd97b8",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "53abc8da",
+              "entityType": {
+                "type": "Target",
+                "allowedOperations": [
+                  "INSERT",
+                  "UPDATE",
+                  "DELETE",
+                  "TRUNCATE"
+                ],
+                "snapshotWritingConcurrency": 2,
+                "columnsMappingMatrix": [
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -4891398803227897090,
+                    "targetColumnId": -4891398803227897090
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 3280626576278720473,
+                    "targetColumnId": 3280626576278720473
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 7696657422409895801,
+                    "targetColumnId": 7696657422409895801
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 8275657831543607410,
+                    "targetColumnId": 8275657831543607410
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 2613799984570680051,
+                    "targetColumnId": 2613799984570680051
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -9209239526357045690,
+                    "targetColumnId": -9209239526357045690
+                  }
+                ],
+                "tablesWithUnlockedSchema": [],
+                "tablesWithUnlockedDataTypes": [],
+                "useBulkOperationsDuringCDC": false,
+                "useBulkOperationsWhileSnapshot": false
+              },
+              "agentId": "be2d59bd",
+              "orderIndex": 0,
+              "customProperties": {
+                "maxWriteBatchSize": 1000,
+                "maxDeleteBatchSize": 1000,
+                "maxWriteBulkSize": 250000,
+                "preSnapshotCommand": "",
+                "postSnapshotCommand": ""
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": 3971609716785522057,
+                "schema": "dbo",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "varchar"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "varchar"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "datetime"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                }
+              ]
+            }
+          ],
+          "groupId": "_default",
+          "orderIndex": 0
+        }
+      ]
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body_raw": "456e74697479207570736572742073756363657373"
+  },
+  {
+    "timestamp": "2026-04-08T22:47:27.822124",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/entities",
+    "path": "/pipelines/8aeb9fb6/entities",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": [
+      {
+        "entity": {
+          "entityId": "98fd97b8",
+          "entityName": "GSLIBTST.CUSTOMERS",
+          "agentEntities": [
+            {
+              "type": "SingleTable",
+              "entityId": "98fd97b8",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "b76f26ed",
+              "entityType": {
+                "type": "Source",
+                "maxFetchItemsCountPerIteration": 1000,
+                "maxTransactionMessageKbSize": 1024,
+                "pollingIntervalMilliseconds": 500,
+                "unchangedDataFilterType": "ENTIRE_ROW"
+              },
+              "agentId": "dcc35915",
+              "orderIndex": 0,
+              "customProperties": {
+                "useDedicatedJournalReader": false
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": -7840468056302474202,
+                "schema": "GSLIBTST",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "CHARACTER VARYING"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "TIMESTAMP"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "INTEGER"
+                }
+              ]
+            },
+            {
+              "type": "SingleTable",
+              "entityId": "98fd97b8",
+              "entityName": "GSLIBTST.CUSTOMERS",
+              "agentEntityId": "53abc8da",
+              "entityType": {
+                "type": "Target",
+                "allowedOperations": [
+                  "INSERT",
+                  "UPDATE",
+                  "DELETE",
+                  "TRUNCATE"
+                ],
+                "snapshotWritingConcurrency": 2,
+                "columnsMappingMatrix": [
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -4891398803227897090,
+                    "targetColumnId": -4891398803227897090
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 3280626576278720473,
+                    "targetColumnId": 3280626576278720473
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 7696657422409895801,
+                    "targetColumnId": 7696657422409895801
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 8275657831543607410,
+                    "targetColumnId": 8275657831543607410
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": 2613799984570680051,
+                    "targetColumnId": 2613799984570680051
+                  },
+                  {
+                    "sourceTableObjectId": -7840468056302474202,
+                    "targetTableObjectId": 3971609716785522057,
+                    "sourceColumnId": -9209239526357045690,
+                    "targetColumnId": -9209239526357045690
+                  }
+                ],
+                "tablesWithUnlockedSchema": [],
+                "tablesWithUnlockedDataTypes": [],
+                "useBulkOperationsDuringCDC": false,
+                "useBulkOperationsWhileSnapshot": false
+              },
+              "agentId": "be2d59bd",
+              "orderIndex": 0,
+              "customProperties": {
+                "maxWriteBatchSize": 1000,
+                "maxDeleteBatchSize": 1000,
+                "maxWriteBulkSize": 250000,
+                "preSnapshotCommand": "",
+                "postSnapshotCommand": ""
+              },
+              "tablesProperties": {
+                "GSLIBTST.CUSTOMERS": {}
+              },
+              "table": {
+                "id": 3971609716785522057,
+                "schema": "dbo",
+                "name": "CUSTOMERS"
+              },
+              "columns": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                },
+                {
+                  "id": 3280626576278720473,
+                  "name": "FIRST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 7696657422409895801,
+                  "name": "LAST_NAME",
+                  "type": "varchar"
+                },
+                {
+                  "id": 8275657831543607410,
+                  "name": "EMAIL",
+                  "type": "varchar"
+                },
+                {
+                  "id": 2613799984570680051,
+                  "name": "PHONE",
+                  "type": "varchar"
+                },
+                {
+                  "id": -9209239526357045690,
+                  "name": "CREATED_AT",
+                  "type": "datetime"
+                }
+              ],
+              "keys": [
+                {
+                  "id": -4891398803227897090,
+                  "name": "CUST_ID",
+                  "type": "int"
+                }
+              ]
+            }
+          ],
+          "groupId": "_default",
+          "orderIndex": 0
+        }
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-08T22:50:51.663004",
+    "method": "POST",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/commands/sync/redo?entity=98fd97b8&snapshotWriteMethod=UPSERT",
+    "path": "/pipelines/8aeb9fb6/commands/sync/redo?entity=98fd97b8&snapshotWriteMethod=UPSERT",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Content-Length": "0",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Origin": "http://192.168.13.53:1716",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 202,
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "text/plain; charset=UTF-8",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body_raw": "526573746172742073796e6320636f6d6d616e6420726563656976656420616e64206469737061746368656420746f206167656e7473"
+  },
+  {
+    "timestamp": "2026-04-08T22:53:23.961037",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/be2d59bd/discovery/columns?tableschema=dbo&tablename=CUSTOMERS",
+    "path": "/pipelines/8aeb9fb6/agents/be2d59bd/discovery/columns?tableschema=dbo&tablename=CUSTOMERS",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "columns": [
+        {
+          "id": -4891398803227897090,
+          "name": "CUST_ID",
+          "type": "int",
+          "isPrimaryKey": true,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 1,
+          "numericPrecision": 10,
+          "numericScale": 0
+        },
+        {
+          "id": 3280626576278720473,
+          "name": "FIRST_NAME",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 2
+        },
+        {
+          "id": 7696657422409895801,
+          "name": "LAST_NAME",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 3
+        },
+        {
+          "id": 8275657831543607410,
+          "name": "EMAIL",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 100,
+          "ordinalPosition": 4
+        },
+        {
+          "id": 2613799984570680051,
+          "name": "PHONE",
+          "type": "varchar",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 20,
+          "ordinalPosition": 5
+        },
+        {
+          "id": -9209239526357045690,
+          "name": "CREATED_AT",
+          "type": "datetime",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 6,
+          "datetimePrecision": 3
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-08T22:53:23.967163",
+    "method": "GET",
+    "url": "https://localhost:1717/pipelines/8aeb9fb6/agents/dcc35915/discovery/columns?tableschema=GSLIBTST&tablename=CUSTOMERS",
+    "path": "/pipelines/8aeb9fb6/agents/dcc35915/discovery/columns?tableschema=GSLIBTST&tablename=CUSTOMERS",
+    "headers": {
+      "Host": "localhost:1717",
+      "Connection": "keep-alive",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1ZjA4ZTdkYy1kMWE5LTQ1NTMtYTg2My0wOTFhOTA2MjMyNWQiLCJpc3MiOiJNT0xPMTciLCJzdWIiOiJhZG1pbiIsInRpbWVzdGFtcCI6MTc3NTY2MjM4NDA3NCwicGxhbiI6InRyaWFsIn0.0QT5WlbWGO35H0f2lTfA8k5UiOrYUfi-RHsYEBKtHBQ",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Avast/145.0.34271.162",
+      "Accept": "application/json",
+      "DNT": "1",
+      "Referer": "http://192.168.13.53:1716/ui/index.html",
+      "Accept-Encoding": "gzip, deflate",
+      "Accept-Language": "en-US,en;q=0.9"
+    },
+    "status_code": 200,
+    "response_headers": {
+      "Content-Encoding": "gzip",
+      "Vary": "Accept-Encoding",
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked"
+    },
+    "response_body": {
+      "columns": [
+        {
+          "id": 1704915659655896885,
+          "name": "_RRN",
+          "type": "BIGINT",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "ordinalPosition": 0
+        },
+        {
+          "id": -4891398803227897090,
+          "name": "CUST_ID",
+          "type": "INTEGER",
+          "isPrimaryKey": true,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 1,
+          "numericPrecision": 9,
+          "numericScale": 0
+        },
+        {
+          "id": 3280626576278720473,
+          "name": "FIRST_NAME",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 2
+        },
+        {
+          "id": 7696657422409895801,
+          "name": "LAST_NAME",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 50,
+          "ordinalPosition": 3
+        },
+        {
+          "id": 8275657831543607410,
+          "name": "EMAIL",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 100,
+          "ordinalPosition": 4
+        },
+        {
+          "id": 2613799984570680051,
+          "name": "PHONE",
+          "type": "CHARACTER VARYING",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 20,
+          "ordinalPosition": 5
+        },
+        {
+          "id": -9209239526357045690,
+          "name": "CREATED_AT",
+          "type": "TIMESTAMP",
+          "isPrimaryKey": false,
+          "isNullable": false,
+          "dataLength": 0,
+          "ordinalPosition": 6,
+          "datetimePrecision": 6
+        }
+      ]
+    }
+  }
+]

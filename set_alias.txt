@@ -1,0 +1,9 @@
+
+alias gluesyncli="podman run -it --rm -v $(pwd)/config.json:/app/config/config.json:ro -v $(pwd)/.env:/app/config/.env:ro gluesync-cli:latest
+
+Usage:
+ubuntu@apimdev2:~/_qoder$ gluesyncli agent list b2f6e46a
+AGENTID    AGENTTYPE   STATUS  
+-------------------------------
+00c7ac81   SOURCE              
+92de6be5   TARGET 

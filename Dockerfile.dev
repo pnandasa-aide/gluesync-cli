@@ -1,0 +1,23 @@
+# GlueSync CLI Development Image (with hot reload)
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    jq \
+    inotify-tools \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+RUN pip install --no-cache-dir \
+    requests>=2.25.0 \
+    python-dotenv>=0.19.0 \
+    watchdog>=2.1.0
+
+# Set environment
+ENV PYTHONUNBUFFERED=1
+
+# Default to bash for development
+CMD ["/bin/bash"]
