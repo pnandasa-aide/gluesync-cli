@@ -1,7 +1,6 @@
-# Environment files with credentials
+# Credentials
 .env
 .env.local
-.env.production
 
 # Python
 __pycache__/
@@ -9,9 +8,15 @@ __pycache__/
 *$py.class
 *.so
 .Python
+*.egg-info/
+dist/
+build/
 
-# Logs
-*.log
+# Data files
+*.json
+!config.json
+!config/*.json
+captured_api_calls*.json
 
 # IDE
 .vscode/
@@ -22,3 +27,8 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Project specific
+lib/jt400.jar
+data/
+*.log
