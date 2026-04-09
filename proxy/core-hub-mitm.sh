@@ -39,7 +39,7 @@ echo "=== Starting MITM as reverse proxy on port 1717 ==="
 echo "This will capture all API calls to Core Hub"
 echo ""
 
-cd /home/ubuntu/_qoder
+cd "$(dirname "$0")"
 ~/.local/bin/mitmdump \
   -s capture_api.py \
   --mode reverse:https://localhost:1719 \

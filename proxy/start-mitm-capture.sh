@@ -2,7 +2,7 @@
 # Start MITM proxy for API capture
 # MITM listens on port 1716 and forwards to Core Hub on port 1717
 
-cd /home/ubuntu/_qoder
+cd "$(dirname "$0")"
 
 echo "=== Starting MITM Proxy for API Capture ==="
 echo ""

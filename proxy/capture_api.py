@@ -10,7 +10,7 @@ from datetime import datetime
 from mitmproxy import http
 
 # Log file for captured API calls
-LOG_FILE = "/home/ubuntu/_qoder/captured_api_calls.json"
+LOG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "captured_api_calls.json")
 
 def load_existing_logs():
     """Load existing logs if file exists"""
