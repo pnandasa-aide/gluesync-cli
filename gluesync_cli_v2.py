@@ -51,6 +51,167 @@ class GlueSyncClient:
             if e.get('entityId') == entity_id:
                 return e
         return None
+    
+    def delete_pipeline(self, pipeline_id: str):
+        """Delete a pipeline"""
+        resp = self.request("DELETE", f"/pipelines/{pipeline_id}")
+        return resp.status_code == 200
+    
+    def create_pipeline(self, name: str, description: str = "", 
+                       source_type: str = "AS400", target_type: str = "MSSQL",
+                       source_host: str = "", source_user: str = "", source_password: str = "",
+                       target_host: str = "", target_user: str = "", target_password: str = "",
+                       target_database: str = ""):
+        """Create a new pipeline with source and target agents"""
+        pipeline_data = {
+            "name": name,
+            "description": description
+        }
+        
+        # Create pipeline first
+        resp = self.request("POST", "/pipelines", json=pipeline_data)
+        if resp.status_code != 200:
+            raise Exception(f"Failed to create pipeline: {resp.text}")
+        
+        response_data = resp.json()
+        # Try different possible ID field names
+        pipeline_id = response_data.get("id") or response_data.get("pipelineId") or response_data.get("_id")
+        
+        if not pipeline_id:
+            # If no ID in response, list pipelines to find the new one
+            pipelines = self.list_pipelines()
+            for p in pipelines:
+                if p.get("name") == name:
+                    pipeline_id = p.get("id")
+                    break
+        
+        # TODO: Add agent configuration (need API endpoint from MITM capture)
+        # This will be updated once we capture the agent creation API
+        
+        return pipeline_id
+    
+    def create_entity(self, pipeline_id: str, source_library: str, source_table: str,
+                     target_schema: str, target_table: str, polling_interval: int = 500,
+                     batch_size: int = 1000):
+        """Create a new entity for table replication"""
+        # First, get pipeline to find agent IDs
+        pipeline = self.get_pipeline(pipeline_id)
+        if not pipeline:
+            raise Exception(f"Pipeline {pipeline_id} not found")
+        
+        # Get agent IDs from pipeline
+        agents = pipeline.get('agents', [])
+        source_agent_id = None
+        target_agent_id = None
+        
+        for agent in agents:
+            if agent.get('agentType') == 'SOURCE':
+                source_agent_id = agent.get('agentId')
+            elif agent.get('agentType') == 'TARGET':
+                target_agent_id = agent.get('agentId')
+        
+        if not source_agent_id or not target_agent_id:
+            raise Exception("Source and target agents must be configured before creating entities")
+        
+        # Build entity payload based on captured API structure
+        entity_data = {
+            "entities": [
+                {
+                    "entityId": "",
+                    "entityName": f"{source_library}.{source_table}",
+                    "agentEntities": [
+                        {
+                            "type": "SingleTable",
+                            "entityId": "",
+                            "entityName": f"{source_library}.{source_table}",
+                            "agentEntityId": "",
+                            "entityType": {
+                                "type": "Source",
+                                "maxFetchItemsCountPerIteration": batch_size,
+                                "maxTransactionMessageKbSize": 1024,
+                                "pollingIntervalMilliseconds": polling_interval,
+                                "unchangedDataFilterType": "ENTIRE_ROW"
+                            },
+                            "agentId": source_agent_id,
+                            "orderIndex": 0,
+                            "customProperties": {
+                                "useDedicatedJournalReader": False
+                            },
+                            "tablesProperties": {
+                                f"{source_library}.{source_table}": {}
+                            },
+                            "table": {
+                                "id": 0,  # Will be auto-assigned by server
+                                "schema": source_library,
+                                "name": source_table
+                            },
+                            "columns": [],  # Will be auto-populated by server
+                            "keys": []
+                        },
+                        {
+                            "type": "SingleTable",
+                            "entityId": "",
+                            "entityName": f"{source_library}.{source_table}",
+                            "agentEntityId": "",
+                            "entityType": {
+                                "type": "Target",
+                                "allowedOperations": ["INSERT", "UPDATE", "DELETE", "TRUNCATE"],
+                                "snapshotWritingConcurrency": 2,
+                                "columnsMappingMatrix": [],  # Will be auto-populated
+                                "tablesWithUnlockedSchema": [],
+                                "tablesWithUnlockedDataTypes": [],
+                                "useBulkOperationsDuringCDC": False,
+                                "useBulkOperationsWhileSnapshot": False
+                            },
+                            "agentId": target_agent_id,
+                            "orderIndex": 0,
+                            "customProperties": {
+                                "maxWriteBatchSize": batch_size,
+                                "maxDeleteBatchSize": batch_size,
+                                "maxWriteBulkSize": 250000,
+                                "preSnapshotCommand": "",
+                                "postSnapshotCommand": ""
+                            },
+                            "tablesProperties": {
+                                f"{source_library}.{source_table}": {}
+                            },
+                            "table": {
+                                "id": 0,
+                                "schema": target_schema,
+                                "name": target_table
+                            },
+                            "columns": [],
+                            "keys": []
+                        }
+                    ],
+                    "groupId": "_default",
+                    "orderIndex": 0
+                }
+            ]
+        }
+        
+        # Create entity via API
+        resp = self.request("PUT", f"/pipelines/{pipeline_id}/config/entities", json=entity_data)
+        if resp.status_code != 200:
+            raise Exception(f"Failed to create entity: {resp.text}")
+        
+        # Return the entity configuration
+        return resp.json()
+    
+    def delete_entity(self, pipeline_id: str, entity_id: str):
+        """Delete an entity"""
+        # TODO: Implementation pending MITM API capture
+        raise NotImplementedError("Entity deletion API endpoint needed")
+    
+    def start_entity(self, pipeline_id: str, entity_id: str, mode: str = "snapshot"):
+        """Start entity replication (snapshot or CDC)"""
+        # TODO: Implementation pending MITM API capture
+        raise NotImplementedError("Entity start API endpoint needed")
+    
+    def stop_entity(self, pipeline_id: str, entity_id: str):
+        """Stop entity replication"""
+        # TODO: Implementation pending MITM API capture
+        raise NotImplementedError("Entity stop API endpoint needed")
 
 
 def format_table(data, columns):
@@ -81,6 +242,57 @@ def main():
     p3.add_argument("id")
     p3.add_argument("--pipeline", "-p", required=True)
     p3.add_argument("--full", "-f", action="store_true", help="Show full details including columns and mappings")
+    
+    # CREATE
+    create_parser = subparsers.add_parser("create", help="Create resources")
+    create_sub = create_parser.add_subparsers(dest="resource")
+    
+    # Create pipeline
+    cp = create_sub.add_parser("pipeline", help="Create pipeline")
+    cp.add_argument("--name", "-n", required=True)
+    cp.add_argument("--description", "-d", default="")
+    cp.add_argument("--source-type", default="AS400")
+    cp.add_argument("--target-type", default="MSSQL")
+    cp.add_argument("--source-host", default="")
+    cp.add_argument("--source-user", default="")
+    cp.add_argument("--source-password", default="")
+    cp.add_argument("--target-host", default="")
+    cp.add_argument("--target-user", default="")
+    cp.add_argument("--target-password", default="")
+    cp.add_argument("--target-database", default="")
+    
+    # Create entity
+    ce = create_sub.add_parser("entity", help="Create entity")
+    ce.add_argument("--pipeline", "-p", required=True)
+    ce.add_argument("--source-library", required=True)
+    ce.add_argument("--source-table", required=True)
+    ce.add_argument("--target-schema", required=True)
+    ce.add_argument("--target-table", required=True)
+    ce.add_argument("--polling-interval", type=int, default=500)
+    ce.add_argument("--batch-size", type=int, default=1000)
+    
+    # DELETE
+    delete_parser = subparsers.add_parser("delete", help="Delete resources")
+    delete_sub = delete_parser.add_subparsers(dest="resource")
+    
+    # Delete pipeline
+    dp = delete_sub.add_parser("pipeline", help="Delete pipeline")
+    dp.add_argument("id")
+    
+    # Delete entity
+    de = delete_sub.add_parser("entity", help="Delete entity")
+    de.add_argument("id")
+    de.add_argument("--pipeline", "-p", required=True)
+    
+    # START/STOP
+    start_parser = subparsers.add_parser("start", help="Start entity replication")
+    start_parser.add_argument("entity_id")
+    start_parser.add_argument("--pipeline", "-p", required=True)
+    start_parser.add_argument("--mode", choices=["snapshot", "cdc"], default="snapshot")
+    
+    stop_parser = subparsers.add_parser("stop", help="Stop entity replication")
+    stop_parser.add_argument("entity_id")
+    stop_parser.add_argument("--pipeline", "-p", required=True)
     
     args = parser.parse_args()
     if not args.action:
@@ -161,6 +373,87 @@ def main():
                                 if len(mappings) > 5:
                                     print(f"    ... and {len(mappings) - 5} more")
                     print()
+    
+    elif args.action == "create":
+        if args.resource == "pipeline":
+            try:
+                pipeline_id = client.create_pipeline(
+                    name=args.name,
+                    description=args.description,
+                    source_type=args.source_type,
+                    target_type=args.target_type,
+                    source_host=args.source_host,
+                    source_user=args.source_user,
+                    source_password=args.source_password,
+                    target_host=args.target_host,
+                    target_user=args.target_user,
+                    target_password=args.target_password,
+                    target_database=args.target_database
+                )
+                print(f"✓ Pipeline created: {pipeline_id}")
+            except Exception as e:
+                print(f"Error: {e}", file=sys.stderr)
+                sys.exit(1)
+        elif args.resource == "entity":
+            try:
+                result = client.create_entity(
+                    pipeline_id=args.pipeline,
+                    source_library=args.source_library,
+                    source_table=args.source_table,
+                    target_schema=args.target_schema,
+                    target_table=args.target_table,
+                    polling_interval=args.polling_interval,
+                    batch_size=args.batch_size
+                )
+                entity_name = result.get('entities', [{}])[0].get('entityName', 'Unknown')
+                print(f"✓ Entity created: {entity_name}")
+            except NotImplementedError as e:
+                print(f"⚠ {e}", file=sys.stderr)
+                print("Please capture the API via MITM proxy and retry", file=sys.stderr)
+                sys.exit(1)
+            except Exception as e:
+                print(f"Error: {e}", file=sys.stderr)
+                sys.exit(1)
+    
+    elif args.action == "delete":
+        if args.resource == "pipeline":
+            if client.delete_pipeline(args.id):
+                print(f"✓ Pipeline deleted: {args.id}")
+            else:
+                print(f"Error: Failed to delete pipeline {args.id}", file=sys.stderr)
+                sys.exit(1)
+        elif args.resource == "entity":
+            try:
+                client.delete_entity(args.pipeline, args.id)
+                print(f"✓ Entity deleted: {args.id}")
+            except NotImplementedError as e:
+                print(f"⚠ {e}", file=sys.stderr)
+                sys.exit(1)
+            except Exception as e:
+                print(f"Error: {e}", file=sys.stderr)
+                sys.exit(1)
+    
+    elif args.action == "start":
+        try:
+            client.start_entity(args.pipeline, args.entity_id, mode=args.mode)
+            print(f"✓ Entity {args.entity_id} started in {args.mode} mode")
+        except NotImplementedError as e:
+            print(f"⚠ {e}", file=sys.stderr)
+            sys.exit(1)
+        except Exception as e:
+            print(f"Error: {e}", file=sys.stderr)
+            sys.exit(1)
+    
+    elif args.action == "stop":
+        try:
+            client.stop_entity(args.pipeline, args.entity_id)
+            print(f"✓ Entity {args.entity_id} stopped")
+        except NotImplementedError as e:
+            print(f"⚠ {e}", file=sys.stderr)
+            sys.exit(1)
+        except Exception as e:
+            print(f"Error: {e}", file=sys.stderr)
+            sys.exit(1)
 
 
 if __name__ == "__main__":
