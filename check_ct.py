@@ -12,7 +12,7 @@ with open('/home/ubuntu/_qoder/.env') as f:
             os.environ[key] = val
 
 MSSQL_HOST = os.getenv('MSSQL_HOST', '192.168.13.62')
-MSSQL_USER = os.getenv('MSSQL_USERNAME', 'gstgdblogin')
+MSSQL_USER = os.getenv('MSSQL_USER', 'gstgdblogin')
 MSSQL_PASS = os.getenv('MSSQL_PASSWORD', '')
 MSSQL_DB = os.getenv('MSSQL_DATABASE', 'GSTargetDB')
 

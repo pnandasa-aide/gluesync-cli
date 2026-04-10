@@ -6,8 +6,8 @@ Based on captured API calls from MITM proxy analysis
 
 SECURITY NOTICE: Replace all placeholder credentials marked with < > before use:
 - <ADMIN_PASSWORD> - Core Hub admin password
-- <AS400_USERNAME>, <AS400_PASSWORD> - AS400 credentials  
-- <MSSQL_USERNAME>, <MSSQL_PASSWORD> - MSSQL credentials
+- <AS400_USER>, <AS400_PASSWORD> - AS400 credentials  
+- <MSSQL_USER>, <MSSQL_PASSWORD> - MSSQL credentials
 """
 
 import requests
@@ -178,7 +178,7 @@ class PipelineRecreator:
             pipeline_id=pipeline_id,
             agent_id=self.source_agent_id,
             host="161.82.146.249",
-            username="<AS400_USERNAME>",
+            username="<AS400_USER>",
             password="<AS400_PASSWORD>",
             database_name="GSLIBTST",
             port=0,
@@ -206,7 +206,7 @@ class PipelineRecreator:
             pipeline_id=pipeline_id,
             agent_id=self.target_agent_id,
             host="192.168.13.62",
-            username="<MSSQL_USERNAME>",
+            username="<MSSQL_USER>",
             password="<MSSQL_PASSWORD>",
             database_name="GSTargetDB",
             port=0,

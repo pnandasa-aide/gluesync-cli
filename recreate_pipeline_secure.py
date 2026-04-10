@@ -43,9 +43,9 @@ def load_credentials():
     credentials = {
         'admin_username': os.getenv('GLUESYNC_ADMIN_USERNAME', 'admin'),
         'admin_password': os.getenv('GLUESYNC_ADMIN_PASSWORD'),
-        'as400_username': os.getenv('AS400_USERNAME'),
+        'as400_username': os.getenv('AS400_USER'),
         'as400_password': os.getenv('AS400_PASSWORD'),
-        'mssql_username': os.getenv('MSSQL_USERNAME'),
+        'mssql_username': os.getenv('MSSQL_USER'),
         'mssql_password': os.getenv('MSSQL_PASSWORD'),
     }
     

@@ -14,7 +14,7 @@ from qadmcli.db.journal import JournalManager
 
 config = {
     'host': '161.82.146.249',
-    'user': os.getenv('AS400_USERNAME', 'user001'),
+    'user': os.getenv('AS400_USER', 'user001'),
     'password': os.getenv('AS400_PASSWORD', ''),
     'port': 8471,
     'ssl': False,
