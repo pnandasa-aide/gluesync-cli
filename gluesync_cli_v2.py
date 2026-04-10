@@ -88,7 +88,11 @@ def main():
         sys.exit(1)
     
     # Connect
-    password = os.getenv("GLUESYNC_ADMIN_PASSWORD") or os.getenv("ADMIN_PASS", "[REDACTED]")
+    password = os.getenv("GLUESYNC_ADMIN_PASSWORD") or os.getenv("ADMIN_PASS")
+    if not password:
+        print("Error: GLUESYNC_ADMIN_PASSWORD environment variable not set", file=sys.stderr)
+        print("Please set it or add to .env file", file=sys.stderr)
+        sys.exit(1)
     client = GlueSyncClient("https://localhost:1717", "admin", password)
     
     # Handle commands
