@@ -111,23 +111,51 @@ class GlueSyncClient:
         return pipeline_id
     
     def create_target_table(self, pipeline_id: str, schema: str, table_name: str, 
-                           columns: list, primary_key: str = None):
-        """Create a target table via GlueSync (generates SQL CREATE TABLE)"""
+                           columns: list, primary_key: str = None, warn_identity_pk: bool = True):
+        """Create a target table via GlueSync (generates SQL CREATE TABLE)
+        
+        Args:
+            pipeline_id: Pipeline ID
+            schema: Target schema name
+            table_name: Target table name
+            columns: List of column definitions
+            primary_key: Primary key column name
+            warn_identity_pk: If True, warn about IDENTITY/AUTO_INCREMENT PK columns
+        """
         # Build CREATE TABLE statement
         column_defs = []
+        pk_columns = []
+        
         for col in columns:
             col_name = col.get('name')
             col_type = col.get('type', 'VARCHAR(100)')
             nullable = col.get('nullable', True)
+            is_identity = col.get('is_identity', False) or col.get('auto_increment', False)
+            
+            # Check for IDENTITY/AUTO_INCREMENT on primary key
+            if warn_identity_pk and is_identity:
+                is_pk = primary_key and col_name == primary_key
+                if is_pk:
+                    print(f"⚠️  WARNING: Column '{col_name}' is IDENTITY/AUTO_INCREMENT and is used as PRIMARY KEY", file=sys.stderr)
+                    print(f"   In replication, PK values come from the source system.", file=sys.stderr)
+                    print(f"   The target should NOT auto-generate PK values!", file=sys.stderr)
+                    print(f"   Consider removing IDENTITY property or use a different column.", file=sys.stderr)
+                    user_input = input("   Continue anyway? (yes/no): ")
+                    if user_input.lower() != 'yes':
+                        raise Exception("Aborted: Remove IDENTITY from PK column or confirm to continue")
             
             col_def = f"   [{col_name}] {col_type}"
             if not nullable:
                 col_def += " NOT NULL"
             column_defs.append(col_def)
+            
+            # Track PK columns
+            if primary_key and col_name == primary_key:
+                pk_columns.append(col_name)
         
-        # Add primary key if specified
-        if primary_key:
-            column_defs.append(f"   PRIMARY KEY (\n      [{primary_key}]\n   )")
+        # Add primary key constraint if specified
+        if pk_columns:
+            column_defs.append(f"   PRIMARY KEY (\n      {', '.join('[' + c + ']' for c in pk_columns)}\n   )")
         
         newline = '\n'
         create_sql = f"CREATE TABLE [{schema}].[{table_name}] (\n{newline.join(column_defs)}\n)"
@@ -147,8 +175,22 @@ class GlueSyncClient:
 
     def create_entity(self, pipeline_id: str, source_library: str, source_table: str,
                      target_schema: str, target_table: str, polling_interval: int = 500,
-                     batch_size: int = 1000):
-        """Create a new entity for table replication"""
+                     batch_size: int = 1000, skip_rrn: bool = True,
+                     source_columns: list = None, source_keys: list = None):
+        """Create a new entity for table replication
+        
+        Args:
+            pipeline_id: Pipeline ID
+            source_library: Source AS400 library
+            source_table: Source table name
+            target_schema: Target MSSQL schema
+            target_table: Target table name
+            polling_interval: Polling interval in milliseconds
+            batch_size: Batch size for data fetching
+            skip_rrn: If True, exclude AS400 _RRN metadata field from target mapping
+            source_columns: Optional list of source columns (auto-discovered if not provided)
+            source_keys: Optional list of source keys (auto-discovered if not provided)
+        """
         # First, get pipeline to find agent IDs
         pipeline = self.get_pipeline(pipeline_id)
         if not pipeline:
@@ -254,9 +296,17 @@ class GlueSyncClient:
         return resp.json()
     
     def delete_entity(self, pipeline_id: str, entity_id: str):
-        """Delete an entity"""
-        # TODO: Implementation pending MITM API capture
-        raise NotImplementedError("Entity deletion API endpoint needed")
+        """Delete an entity from the pipeline
+        
+        Args:
+            pipeline_id: Pipeline ID
+            entity_id: Entity ID to delete
+            
+        Returns:
+            True if deletion successful
+        """
+        resp = self.request("DELETE", f"/pipelines/{pipeline_id}/entities/{entity_id}")
+        return resp.status_code in [200, 202, 204]
     
     def start_entity(self, pipeline_id: str, entity_id: str, mode: str = "snapshot"):
         """Start entity replication (snapshot or CDC)"""
@@ -344,6 +394,10 @@ def main():
     ce.add_argument("--target-table", required=True)
     ce.add_argument("--polling-interval", type=int, default=500)
     ce.add_argument("--batch-size", type=int, default=1000)
+    ce.add_argument("--skip-rrn", action="store_true", default=True, 
+                   help="Skip AS400 _RRN metadata field from target mapping (default: True)")
+    ce.add_argument("--include-rrn", action="store_false", dest="skip_rrn",
+                   help="Include AS400 _RRN metadata field in target mapping")
     
     # DELETE
     delete_parser = subparsers.add_parser("delete", help="Delete resources")
@@ -518,7 +572,8 @@ def main():
                     target_schema=args.target_schema,
                     target_table=args.target_table,
                     polling_interval=args.polling_interval,
-                    batch_size=args.batch_size
+                    batch_size=args.batch_size,
+                    skip_rrn=args.skip_rrn
                 )
                 entity_name = result.get('entities', [{}])[0].get('entityName', 'Unknown')
                 print(f"✓ Entity created: {entity_name}")
