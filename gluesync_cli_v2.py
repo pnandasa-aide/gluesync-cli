@@ -90,6 +90,40 @@ class GlueSyncClient:
         
         return pipeline_id
     
+    def create_target_table(self, pipeline_id: str, schema: str, table_name: str, 
+                           columns: list, primary_key: str = None):
+        """Create a target table via GlueSync (generates SQL CREATE TABLE)"""
+        # Build CREATE TABLE statement
+        column_defs = []
+        for col in columns:
+            col_name = col.get('name')
+            col_type = col.get('type', 'VARCHAR(100)')
+            nullable = col.get('nullable', True)
+            
+            col_def = f"   [{col_name}] {col_type}"
+            if not nullable:
+                col_def += " NOT NULL"
+            column_defs.append(col_def)
+        
+        # Add primary key if specified
+        if primary_key:
+            column_defs.append(f"   PRIMARY KEY (\n      [{primary_key}]\n   )")
+        
+        create_sql = f"CREATE TABLE [{schema}].[{table_name}] (\n{',\\n'.join(column_defs)}\n)"
+        
+        # Send to GlueSync for execution
+        payload = {
+            "statement": create_sql
+        }
+        
+        resp = self.request("PUT", 
+                           f"/pipelines/{pipeline_id}/config/entities/statements/create-table",
+                           json=payload)
+        if resp.status_code != 200:
+            raise Exception(f"Failed to create table: {resp.text}")
+        
+        return resp.json()
+
     def create_entity(self, pipeline_id: str, source_library: str, source_table: str,
                      target_schema: str, target_table: str, polling_interval: int = 500,
                      batch_size: int = 1000):
