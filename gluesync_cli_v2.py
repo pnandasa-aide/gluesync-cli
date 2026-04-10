@@ -65,6 +65,29 @@ class GlueSyncClient:
         resp = self.request("POST", f"/pipelines/{pipeline_id}/commands/maintenance/exit")
         return resp.status_code == 202
     
+    def _map_db_type(self, source_type: str) -> str:
+        """Map AS400/DB2 data types to MSSQL data types"""
+        type_mapping = {
+            'INTEGER': 'int',
+            'SMALLINT': 'smallint',
+            'BIGINT': 'bigint',
+            'DECIMAL': 'decimal',
+            'NUMERIC': 'decimal',
+            'CHARACTER': 'varchar',
+            'CHAR': 'varchar',
+            'CHARACTER VARYING': 'varchar',
+            'VARCHAR': 'varchar',
+            'DATE': 'date',
+            'TIME': 'time',
+            'TIMESTAMP': 'datetime',
+            'FLOAT': 'float',
+            'REAL': 'real',
+            'DOUBLE': 'float',
+            'BLOB': 'varbinary',
+            'CLOB': 'varchar',
+        }
+        return type_mapping.get(source_type.upper(), 'varchar')
+    
     def get_entity(self, pipeline_id: str, entity_id: str):
         entities = self.list_entities(pipeline_id)
         for e in entities:
@@ -210,6 +233,80 @@ class GlueSyncClient:
         if not source_agent_id or not target_agent_id:
             raise Exception("Source and target agents must be configured before creating entities")
         
+        # Auto-discover schema from source if not provided
+        if source_columns is None or source_keys is None:
+            print(f"Discovering schema for {source_library}.{source_table}...", file=sys.stderr)
+            schemas = self.get_agent_discovery_schemas(pipeline_id, source_agent_id)
+            
+            # Find the table schema
+            source_columns = []
+            source_keys = []
+            schema_found = False
+            
+            for schema in schemas:
+                if schema.get('schema') == source_library:
+                    for table in schema.get('tables', []):
+                        if table.get('name') == source_table:
+                            source_columns = table.get('columns', [])
+                            source_keys = table.get('keys', [])
+                            schema_found = True
+                            print(f"✓ Found {len(source_columns)} columns and {len(source_keys)} keys", file=sys.stderr)
+                            break
+                if schema_found:
+                    break
+            
+            if not schema_found:
+                raise Exception(f"Table {source_library}.{source_table} not found in schema discovery")
+        
+        # Build target columns (map from source columns)
+        target_columns = []
+        for col in source_columns:
+            # Skip _RRN if requested
+            if skip_rrn and col.get('name', '').startswith('_RRN'):
+                print(f"Skipping AS400 _RRN field", file=sys.stderr)
+                continue
+            
+            # Map source type to target type
+            source_type = col.get('type', 'VARCHAR')
+            target_type = self._map_db_type(source_type)
+            
+            target_columns.append({
+                "id": col.get('id', 0),
+                "name": col.get('name'),
+                "type": target_type
+            })
+        
+        # Build target keys (same as source keys, skipping _RRN)
+        target_keys = []
+        for key in source_keys:
+            if skip_rrn and key.get('name', '').startswith('_RRN'):
+                continue
+            target_keys.append({
+                "id": key.get('id', 0),
+                "name": key.get('name'),
+                "type": self._map_db_type(key.get('type', 'VARCHAR'))
+            })
+        
+        # Build columns mapping matrix
+        columns_mapping_matrix = []
+        for src_col in source_columns:
+            # Skip _RRN
+            if skip_rrn and src_col.get('name', '').startswith('_RRN'):
+                continue
+            
+            # Find corresponding target column
+            for tgt_col in target_columns:
+                if tgt_col.get('name') == src_col.get('name'):
+                    columns_mapping_matrix.append({
+                        "sourceTableObjectId": 0,  # Will be set by server
+                        "targetTableObjectId": 0,  # Will be set by server
+                        "sourceColumnId": src_col.get('id', 0),
+                        "targetColumnId": tgt_col.get('id', 0)
+                    })
+                    break
+        
+        print(f"Built {len(columns_mapping_matrix)} column mappings", file=sys.stderr)
+        
         # Build entity payload based on captured API structure
         entity_data = {
             "entities": [
@@ -238,12 +335,12 @@ class GlueSyncClient:
                                 f"{source_library}.{source_table}": {}
                             },
                             "table": {
-                                "id": 0,  # Will be auto-assigned by server
+                                "id": 0,
                                 "schema": source_library,
                                 "name": source_table
                             },
-                            "columns": [],  # Will be auto-populated by server
-                            "keys": []
+                            "columns": source_columns,  # ✅ NOW POPULATED
+                            "keys": source_keys          # ✅ NOW POPULATED
                         },
                         {
                             "type": "SingleTable",
@@ -254,7 +351,7 @@ class GlueSyncClient:
                                 "type": "Target",
                                 "allowedOperations": ["INSERT", "UPDATE", "DELETE", "TRUNCATE"],
                                 "snapshotWritingConcurrency": 2,
-                                "columnsMappingMatrix": [],  # Will be auto-populated
+                                "columnsMappingMatrix": columns_mapping_matrix,  # ✅ NOW POPULATED
                                 "tablesWithUnlockedSchema": [],
                                 "tablesWithUnlockedDataTypes": [],
                                 "useBulkOperationsDuringCDC": False,
@@ -277,8 +374,8 @@ class GlueSyncClient:
                                 "schema": target_schema,
                                 "name": target_table
                             },
-                            "columns": [],
-                            "keys": []
+                            "columns": target_columns,  # ✅ NOW POPULATED
+                            "keys": target_keys          # ✅ NOW POPULATED
                         }
                     ],
                     "groupId": "_default",
