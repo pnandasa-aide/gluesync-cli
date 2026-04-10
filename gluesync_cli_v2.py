@@ -45,6 +45,26 @@ class GlueSyncClient:
             return []
         return [e.get('entity', {}) for e in resp.json()]
     
+    def list_agents(self, pipeline_id: str):
+        """List agents for a pipeline"""
+        resp = self.request("GET", f"/pipelines/{pipeline_id}/agents")
+        return resp.json() if resp.status_code == 200 else []
+    
+    def get_agent_discovery_schemas(self, pipeline_id: str, agent_id: str):
+        """Discover available schemas from an agent"""
+        resp = self.request("GET", f"/pipelines/{pipeline_id}/agents/{agent_id}/discovery/schemas")
+        return resp.json() if resp.status_code == 200 else []
+    
+    def enter_maintenance_mode(self, pipeline_id: str):
+        """Put pipeline into maintenance mode"""
+        resp = self.request("POST", f"/pipelines/{pipeline_id}/commands/maintenance/enter")
+        return resp.status_code == 202
+    
+    def exit_maintenance_mode(self, pipeline_id: str):
+        """Exit maintenance mode (resume operations)"""
+        resp = self.request("POST", f"/pipelines/{pipeline_id}/commands/maintenance/exit")
+        return resp.status_code == 202
+    
     def get_entity(self, pipeline_id: str, entity_id: str):
         entities = self.list_entities(pipeline_id)
         for e in entities:
@@ -109,7 +129,8 @@ class GlueSyncClient:
         if primary_key:
             column_defs.append(f"   PRIMARY KEY (\n      [{primary_key}]\n   )")
         
-        create_sql = f"CREATE TABLE [{schema}].[{table_name}] (\n{',\\n'.join(column_defs)}\n)"
+        newline = '\n'
+        create_sql = f"CREATE TABLE [{schema}].[{table_name}] (\n{newline.join(column_defs)}\n)"
         
         # Send to GlueSync for execution
         payload = {
@@ -277,6 +298,25 @@ def main():
     p3.add_argument("--pipeline", "-p", required=True)
     p3.add_argument("--full", "-f", action="store_true", help="Show full details including columns and mappings")
     
+    # MAINTENANCE
+    maint_parser = subparsers.add_parser("maintenance", help="Pipeline maintenance mode")
+    maint_sub = maint_parser.add_subparsers(dest="mode")
+    maint_enter = maint_sub.add_parser("enter", help="Enter maintenance mode")
+    maint_enter.add_argument("pipeline_id")
+    maint_exit = maint_sub.add_parser("exit", help="Exit maintenance mode (resume)")
+    maint_exit.add_argument("pipeline_id")
+    
+    # AGENTS
+    agents_parser = subparsers.add_parser("agents", help="List pipeline agents")
+    agents_parser.add_argument("pipeline_id")
+    
+    # SCHEMA DISCOVERY
+    schema_parser = subparsers.add_parser("discover-schema", help="Discover table schema from source")
+    schema_parser.add_argument("pipeline_id")
+    schema_parser.add_argument("--agent-id", required=True, help="Source agent ID")
+    schema_parser.add_argument("--library", required=True)
+    schema_parser.add_argument("--table", required=True)
+    
     # CREATE
     create_parser = subparsers.add_parser("create", help="Create resources")
     create_sub = create_parser.add_subparsers(dest="resource")
@@ -342,7 +382,48 @@ def main():
     client = GlueSyncClient("https://localhost:1717", "admin", password)
     
     # Handle commands
-    if args.action == "get":
+    if args.action == "maintenance":
+        if args.mode == "enter":
+            success = client.enter_maintenance_mode(args.pipeline_id)
+            if success:
+                print(f"✓ Pipeline {args.pipeline_id} entered maintenance mode")
+            else:
+                print(f"✗ Failed to enter maintenance mode", file=sys.stderr)
+                sys.exit(1)
+        elif args.mode == "exit":
+            success = client.exit_maintenance_mode(args.pipeline_id)
+            if success:
+                print(f"✓ Pipeline {args.pipeline_id} resumed from maintenance mode")
+            else:
+                print(f"✗ Failed to exit maintenance mode", file=sys.stderr)
+                sys.exit(1)
+    
+    elif args.action == "agents":
+        agents = client.list_agents(args.pipeline_id)
+        if agents:
+            print(f"Agents for pipeline {args.pipeline_id}:")
+            for agent in agents:
+                print(f"  - {agent.get('agentId')}: {agent.get('agentType')}")
+        else:
+            print("No agents found")
+    
+    elif args.action == "discover-schema":
+        print(f"Discovering schema for {args.library}.{args.table}...", file=sys.stderr)
+        schemas = client.get_agent_discovery_schemas(args.pipeline_id, args.agent_id)
+        # Find the specific table schema
+        found = False
+        for schema in schemas:
+            if schema.get('schema') == args.library:
+                for table in schema.get('tables', []):
+                    if table.get('name') == args.table:
+                        print(json.dumps(table, indent=2))
+                        found = True
+                        break
+        if not found:
+            print(f"Table {args.library}.{args.table} not found", file=sys.stderr)
+            sys.exit(1)
+    
+    elif args.action == "get":
         if args.resource == "pipelines":
             data = client.list_pipelines()
             print(format_table(data, ["id", "name", "configurationCompleted"]) if args.output == "table" else json.dumps(data, indent=2))
